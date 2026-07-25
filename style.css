@@ -150,3 +150,7 @@ footer {
 .btn-contact[href^="mailto"] {
     background-color: #6c757d; /* Couleur grise élégante pour l'e-mail */
 }
+
+.btn-contact[href^="mailto"] {
+    background-color: #ff9f1c; /* Orange vif et très visible */
+}
