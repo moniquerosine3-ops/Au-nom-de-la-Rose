@@ -1,24 +1,61 @@
-AU-NOM-DE-LA-ROSE/
-│
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-│
-├── assets/
-│   ├── favicon.ico
-│   ├── logo.svg
-│   └── icons/
-│       ├── phone.svg
-│       ├── whatsapp.svg
-│       └── flower.svg
-│
-└── images/
-    ├── hero.jpg
-    ├── brigitte.jpg
-    ├── bouquet-1.jpg
-    ├── bouquet-2.jpg
-    ├── bouquet-3.jpg
-    ├── mariage.jpg
-    ├── boutique.jpg
-    └── livraison.jpg
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au Nom de la Rose | Artisan Floral</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="assets/logo.svg" alt="Au Nom de la Rose" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#boutique">La Boutique</a></li>
+                    <li><a href="#prestations">Prestations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero" style="background-image: url('images/hero.jpg');">
+            <div class="hero-content">
+                <h1>Au Nom de la Rose</h1>
+                <p>Artisan floral, créations uniques pour vos moments précieux.</p>
+                <a href="#contact" class="btn">Nous contacter</a>
+            </div>
+        </section>
+
+        <section id="fleuriste">
+            <div class="container content-flex">
+                <img src="images/brigitte.jpg" alt="Brigitte" class="profile-img">
+                <div class="text-block">
+                    <h2>Notre Histoire</h2>
+                    <p>Bienvenue dans l'univers de Brigitte, artisane passionnée façonnant des compositions florales sur mesure.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="boutique">
+            <div class="container">
+                <h2>Nos Bouquets</h2>
+                <div class="grid">
+                    <div class="card"><img src="images/bouquet-1.jpg" alt="Bouquet Passion"><h3>Bouquet Passion</h3></div>
+                    <div class="card"><img src="images/bouquet-2.jpg" alt="Bouquet Tendresse"><h3>Bouquet Tendresse</h3></div>
+                    <div class="card"><img src="images/bouquet-3.jpg" alt="Bouquet Éclat"><h3>Bouquet Éclat</h3></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
