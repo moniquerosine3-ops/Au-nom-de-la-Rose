@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { 
-            --primary-color: #d4a373; 
-            --primary-light: #faedcd;
-            --secondary-color: #2b2b2b; 
-            --bg-light: #fdfbf7; 
-            --text-dark: #333333; 
-            --rose-accent: #e07a5f;
+            --primary-color: #c98b68; 
+            --primary-light: #f7f3ed;
+            --secondary-color: #2c2a29; 
+            --text-dark: #4a4543; 
+            --rose-accent: #d36e53;
+            --border-color: #e6dfd5;
         }
 
         body { 
-            font-family: 'Segoe UI', sans-serif; 
-            background-color: #faf8f5; 
+            font-family: 'Jost', 'Helvetica Neue', Arial, sans-serif; 
+            background-color: #fbf9f6; 
             color: var(--text-dark); 
             margin: 0; 
-            line-height: 1.6; 
+            line-height: 1.7; 
         }
 
         .container { 
@@ -31,13 +31,13 @@
         }
 
         .top-bar { 
-            background: linear-gradient(135deg, var(--primary-color), var(--rose-accent)); 
-            color: white; 
+            background-color: var(--secondary-color); 
+            color: #f4efea; 
             text-align: center; 
             padding: 10px; 
-            font-size: 0.9rem; 
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         header { 
@@ -45,26 +45,27 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.06); 
+            border-bottom: 1px solid var(--border-color);
         }
 
         .header-content { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 15px 0; 
+            padding: 20px 0; 
         }
 
         .logo h1 { 
             margin: 0; 
-            font-size: 1.8rem; 
+            font-size: 1.6rem; 
             color: var(--secondary-color); 
-            font-family: Georgia, serif; 
+            font-family: 'Playfair Display', Georgia, serif; 
+            letter-spacing: 1px;
         }
 
         nav ul { 
             display: flex; 
-            gap: 20px; 
+            gap: 25px; 
             list-style: none; 
             margin: 0; 
             padding: 0; 
@@ -73,8 +74,9 @@
         nav a { 
             text-decoration: none; 
             color: var(--text-dark); 
-            font-weight: 600; 
+            font-weight: 400; 
             font-size: 0.95rem; 
+            letter-spacing: 0.5px;
             transition: color 0.2s;
         }
 
@@ -82,170 +84,201 @@
             color: var(--primary-color);
         }
 
-        /* Bannière d'amour des fleurs */
-        .love-banner {
-            background-color: var(--primary-light);
-            border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            margin: 25px 0 10px 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: #5c4033;
-            font-size: 1.05rem;
+        /* Fil d' Ariane & Introduction douce */
+        .breadcrumb {
+            margin: 30px 0 15px 0;
         }
 
-        /* Galerie du Produit */
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Fiche Produit Principale */
         .product-page { 
-            margin: 20px 0 40px 0; 
+            margin: 10px 0 60px 0; 
             display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 40px; 
+            grid-template-columns: 1.1fr 0.9fr; 
+            gap: 50px; 
             background: white; 
-            padding: 35px; 
-            border-radius: 16px; 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04); 
+            padding: 40px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 25px rgba(0,0,0,0.03); 
+            border: 1px solid var(--border-color);
         }
 
         @media (max-width: 900px) {
-            .product-page { grid-template-columns: 1fr; }
+            .product-page { grid-template-columns: 1fr; padding: 20px; }
         }
 
+        /* Galerie Épurée */
         .product-gallery { 
             display: flex; 
             flex-direction: column; 
-            gap: 15px; 
+            gap: 20px; 
         }
 
         .main-image img { 
             width: 100%; 
-            height: 420px; 
+            height: 480px; 
             object-fit: cover; 
-            border-radius: 12px; 
+            border-radius: 6px; 
             cursor: pointer; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-            transition: transform 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            transition: opacity 0.3s ease; 
         }
 
-        .main-image img:hover { 
-            transform: scale(1.01); 
-        }
-
-        /* Légende dynamique de l'image sélectionnée */
         .image-description-box {
-            background: #faf8f5;
-            padding: 10px 15px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: #666;
+            background: var(--primary-light);
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-size: 0.92rem;
+            color: var(--secondary-color);
             text-align: center;
-            border: 1px dashed var(--primary-color);
+            border-left: 3px solid var(--primary-color);
+            font-weight: 300;
         }
 
-        /* Grille des 8 vignettes */
         .thumbnails { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
-            gap: 10px; 
+            gap: 12px; 
         }
 
         .thumb { 
             width: 100%; 
-            height: 65px; 
+            height: 75px; 
             object-fit: cover; 
-            border-radius: 6px; 
+            border-radius: 4px; 
             cursor: pointer; 
-            border: 2px solid transparent; 
+            border: 1px solid transparent; 
             transition: all 0.2s ease; 
-            opacity: 0.7; 
+            opacity: 0.6; 
         }
 
         .thumb:hover, .thumb.active { 
             border-color: var(--primary-color); 
             opacity: 1; 
-            transform: translateY(-2px); 
         }
 
+        /* Infos & Typographie */
         .product-info h1 { 
             color: var(--secondary-color); 
-            font-family: Georgia, serif; 
+            font-family: 'Playfair Display', Georgia, serif; 
             margin-top: 0; 
-            font-size: 2.2rem;
+            font-size: 2.4rem;
+            font-weight: normal;
+        }
+
+        .product-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.6;
         }
 
         .price-display { 
-            font-size: 1.8rem; 
-            font-weight: bold; 
-            color: var(--rose-accent); 
-            margin: 15px 0; 
+            font-size: 2rem; 
+            font-weight: 300; 
+            color: var(--secondary-color); 
+            margin: 20px 0; 
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .section-label { 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: #888; 
+            display: block; 
+            margin-bottom: 12px; 
+            font-weight: 600;
         }
 
         .size-selector { 
-            display: flex; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
             gap: 10px; 
-            margin: 20px 0; 
-            flex-wrap: wrap; 
+            margin-bottom: 30px; 
         }
 
         .size-btn { 
-            padding: 10px 16px; 
-            border: 1.5px solid #ddd; 
+            padding: 12px 15px; 
+            border: 1px solid var(--border-color); 
             background: white; 
-            border-radius: 25px; 
+            border-radius: 4px; 
             cursor: pointer; 
-            font-weight: bold; 
+            font-weight: 400; 
             font-size: 0.9rem;
+            color: var(--text-dark);
             transition: all 0.2s ease; 
+            text-align: center;
         }
 
         .size-btn.active, .size-btn:hover { 
-            background-color: var(--primary-color); 
+            background-color: var(--secondary-color); 
             color: white; 
-            border-color: var(--primary-color); 
-            box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3);
+            border-color: var(--secondary-color); 
         }
 
-        /* Section détails et décors doux */
+        /* Caractéristiques épurées */
         .features-list {
             list-style: none;
             padding: 0;
-            margin: 20px 0;
+            margin: 0 0 35px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
         }
 
         .features-list li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #555;
+            margin-bottom: 12px;
+            font-size: 0.92rem;
+            color: var(--text-dark);
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .features-list li:last-child {
+            margin-bottom: 0;
         }
 
         .features-list li i {
             color: var(--primary-color);
+            margin-top: 4px;
+        }
+
+        /* Boutons d'action chics */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .btn-action { 
             display: inline-flex; 
             align-items: center; 
             justify-content: center; 
-            gap: 10px; 
-            padding: 14px 20px; 
-            border-radius: 30px; 
+            gap: 12px; 
+            padding: 15px 25px; 
+            border-radius: 4px; 
             color: white; 
             text-decoration: none; 
-            font-weight: bold; 
-            font-size: 1rem; 
-            margin-top: 10px; 
-            transition: transform 0.2s, opacity 0.2s;
+            font-weight: 500; 
+            font-size: 0.95rem; 
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
         }
 
-        .btn-action:hover {
-            opacity: 0.95;
-            transform: translateY(-2px);
-        }
+        .btn-whatsapp { background-color: #2d6a4f; }
+        .btn-whatsapp:hover { background-color: #1b4332; }
 
-        .btn-whatsapp { background-color: #25d366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); }
-        .btn-call { background-color: var(--primary-color); box-shadow: 0 4px 12px rgba(212, 163, 115, 0.25); }
+        .btn-call { background-color: var(--secondary-color); }
+        .btn-call:hover { background-color: #000; }
 
         /* Lightbox */
         .lightbox-modal { 
@@ -256,42 +289,51 @@
             left: 0; 
             width: 100%; 
             height: 100%; 
-            background-color: rgba(0, 0, 0, 0.88); 
+            background-color: rgba(20, 20, 20, 0.9); 
             justify-content: center; 
             align-items: center; 
             cursor: zoom-out; 
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .lightbox-modal img { 
-            max-width: 85%; 
-            max-height: 80%; 
-            border-radius: 8px; 
+            max-width: 80%; 
+            max-height: 75%; 
+            border-radius: 4px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .lightbox-caption {
-            color: white;
-            font-size: 1.1rem;
-            font-family: Georgia, serif;
+            color: #f4efea;
+            font-size: 1.05rem;
+            font-family: 'Playfair Display', Georgia, serif;
             letter-spacing: 0.5px;
         }
 
         footer { 
             background: var(--secondary-color); 
-            color: #bbb; 
-            padding: 40px 0; 
-            margin-top: 60px; 
+            color: #999; 
+            padding: 50px 0; 
+            margin-top: 80px; 
             text-align: center; 
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.5px;
+        }
+
+        footer h4 {
+            color: white;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: normal;
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <i class="fa-solid fa-heart" style="color: #ffe5ec;"></i> Création artisanale préparée avec amour et passion par Brigitte <i class="fa-solid fa-heart" style="color: #ffe5ec;"></i>
+        ✨ Création florale artisanale préparée avec passion par Brigitte
     </div>
 
     <header>
@@ -310,48 +352,41 @@
     </header>
 
     <main class="container">
-        <div style="margin-top: 25px;">
-            <a href="index.html#bouquets" style="color: var(--primary-color); text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-arrow-left"></i> Retour aux bouquets
-            </a>
-        </div>
-
-        <div class="love-banner">
-            <i class="fa-solid fa-seedling" style="color: var(--rose-accent); margin-right: 8px;"><span> 
-            <em>"Les fleurs sont les doux mots que la nature chuchote à nos cœurs."</em> Découvrez les déclinaisons et décors inspirants de notre Bouquet Tendresse à travers nos 8 compositions exclusives.
+        <div class="breadcrumb">
+            <a href="index.html#bouquets"><i class="fa-solid fa-arrow-left"></i> Retour à la collection</a>
         </div>
 
         <div class="product-page">
-            <!-- Galerie 8 Photos avec descriptions dynamiques -->
+            <!-- Galerie Photos -->
             <div class="product-gallery">
                 <div class="main-image">
-                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Bouquet Tendresse - Vue principale" id="current-img" onclick="openLightbox(this)">
+                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Bouquet Tendresse" id="current-img" onclick="openLightbox(this)">
                 </div>
                 
                 <div class="image-description-box" id="img-desc">
-                    ✨ <strong>Vue 1 :</strong> Allée d'honneur majestueuse décorée pour célébrer l'amour et l'élégance florale.
+                    Vue 1 : Allée d'honneur majestueuse décorée pour célébrer l'amour et l'élégance florale.
                 </div>
 
                 <div class="thumbnails">
-                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Vue 1" class="thumb active" onclick="changeImage(this, '✨ **Vue 1 :** Allée d\'honneur majestueuse décorée pour célébrer l\'amour et l\'élégance florale.')">
-                    <img src="images/Bouquet Tendresse 2.jpeg" alt="Vue 2" class="thumb" onclick="changeImage(this, '🌷 **Vue 2 :** Table de réception raffinée, sublimée par la douceur de nos arrangements floraux.')">
-                    <img src="images/Bouquet Tendresse 3.jpeg" alt="Vue 3" class="thumb" onclick="changeImage(this, '🌹 **Vue 3 :** Éclat chaleureux de tulipes et de roses sélectionnées avec soin par Brigitte.')">
-                    <img src="images/Bouquet Tendresse 4.jpeg" alt="Vue 4" class="thumb" onclick="changeImage(this, '🌿 **Vue 4 :** Mur végétal luxuriant, une touche de nature vivante et passionnée.')">
-                    <img src="images/Bouquet Tendresse 5.jpeg" alt="Vue 5" class="thumb" onclick="changeImage(this, '💐 **Vue 5 :** Gros plan sur la fraîcheur éclatante des pétales baignés de lumière.')">
-                    <img src="images/Bouquet Tendresse 6.jpeg" alt="Vue 6" class="thumb" onclick="changeImage(this, '💖 **Vue 6 :** Harmonie subtile des couleurs pastel pour envelopper vos moments de tendresse.')">
-                    <img src="images/Bouquet Tendresse 7.jpeg" alt="Vue 7" class="thumb" onclick="changeImage(this, '🌸 **Vue 7 :** Décoration florale extérieure pensée pour créer des souvenirs inoubliables.')">
-                    <img src="images/Bouquet Tendresse 8.jpeg" alt="Vue 8" class="thumb" onclick="changeImage(this, '🏛️ **Vue 8 :** Mise en scène grand format pour les mariages et réceptions d\'exception.')">
+                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Vue 1" class="thumb active" onclick="changeImage(this, 'Vue 1 : Allée d\'honneur majestueuse décorée pour célébrer l\'amour et l\'élégance florale.')">
+                    <img src="images/Bouquet Tendresse 2.jpeg" alt="Vue 2" class="thumb" onclick="changeImage(this, 'Vue 2 : Table de réception raffinée, sublimée par la douceur de nos arrangements.')">
+                    <img src="images/Bouquet Tendresse 3.jpeg" alt="Vue 3" class="thumb" onclick="changeImage(this, 'Vue 3 : Éclat chaleureux de tulipes et de roses sélectionnées avec soin par Brigitte.')">
+                    <img src="images/Bouquet Tendresse 4.jpeg" alt="Vue 4" class="thumb" onclick="changeImage(this, 'Vue 4 : Mur végétal luxuriant, une touche de nature vivante et passionnée.')">
+                    <img src="images/Bouquet Tendresse 5.jpeg" alt="Vue 5" class="thumb" onclick="changeImage(this, 'Vue 5 : Gros plan sur la fraîcheur éclatante des pétales baignés de lumière.')">
+                    <img src="images/Bouquet Tendresse 6.jpeg" alt="Vue 6" class="thumb" onclick="changeImage(this, 'Vue 6 : Harmonie subtile des couleurs pastel pour envelopper vos moments de tendresse.')">
+                    <img src="images/Bouquet Tendresse 7.jpeg" alt="Vue 7" class="thumb" onclick="changeImage(this, 'Vue 7 : Décoration florale extérieure pensée pour créer des souvenirs inoubliables.')">
+                    <img src="images/Bouquet Tendresse 8.jpeg" alt="Vue 8" class="thumb" onclick="changeImage(this, 'Vue 8 : Mise en scène grand format pour les mariages et réceptions d\'exception.')">
                 </div>
             </div>
 
             <!-- Informations Produit -->
             <div class="product-info">
                 <h1>Bouquet Tendresse</h1>
-                <p style="color: #666; font-size: 1.05rem;">Douceur pastel de pivoines, roses délicates et eucalyptus frais. Une composition poétique et chaleureuse façonnée à la main pour exprimer toute votre affection et célébrer l'amour sous toutes ses formes.</p>
+                <p class="product-subtitle">Douceur pastel de pivoines, roses délicates et eucalyptus frais. Une composition poétique et chaleureuse façonnée à la main pour exprimer toute votre affection.</p>
 
                 <div class="price-display" id="price-tag">25 €</div>
 
-                <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Choisissez la taille / le format :</label>
+                <span class="section-label">Choisissez votre format :</span>
                 <div class="size-selector">
                     <button class="size-btn active" onclick="selectSize('25 €', 'Format Découverte (25 €)', this)">Format Découverte (25 €)</button>
                     <button class="size-btn" onclick="selectSize('35 €', 'Taille Standard (35 €)', this)">Taille Standard (35 €)</button>
@@ -360,25 +395,25 @@
                 </div>
 
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-check-circle"></i> <strong>Composition :</strong> Roses pastel, pivoines de saison, œillets fins & eucalyptus.</li>
-                    <li><i class="fa-solid fa-truck-fast"></i> <strong>Livraison :</strong> Soignée et rapide à domicile ou sur le lieu de l'événement.</li>
-                    <li><i class="fa-solid fa-hand-holding-heart"></i> <strong>Fraîcheur garantie :</strong> Fleurs coupées du jour par notre artisane fleuriste.</li>
+                    <li><i class="fa-solid fa-leaf"></i> <div><strong>Composition :</strong> Roses pastel, pivoines de saison, œillets fins & eucalyptus frais.</div></li>
+                    <li><i class="fa-solid fa-truck"></i> <div><strong>Livraison :</strong> Soignée et rapide à domicile ou sur le lieu de l'événement.</div></li>
+                    <li><i class="fa-solid fa-heart"></i> <div><strong>Fraîcheur garantie :</strong> Fleurs coupées du jour par notre artisane fleuriste.</div></li>
                 </ul>
 
-                <h3 style="margin-top: 25px; color: var(--secondary-color); font-size: 1.1rem;">Commander ce bouquet :</h3>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
+                <span class="section-label">Commander ce bouquet :</span>
+                <div class="action-buttons">
                     <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Tendresse%20(Format%20Découverte%20-%2025%20€)" class="btn-action btn-whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp fa-lg"></i> Commander instantanément via WhatsApp
+                        <i class="fa-brands fa-whatsapp fa-lg"></i> Commander via WhatsApp
                     </a>
                     <a href="tel:+4515221767454" class="btn-action btn-call">
-                        <i class="fa-solid fa-phone"></i> Commander par Téléphone avec Brigitte
+                        <i class="fa-solid fa-phone"></i> Commander par Téléphone
                     </a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal Lightbox Amélioré -->
+    <!-- Modal Lightbox -->
     <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Agrandissement">
         <div id="lightbox-caption" class="lightbox-caption"></div>
@@ -386,32 +421,24 @@
 
     <footer>
         <div class="container">
-            <p style="font-family: Georgia, serif; font-size: 1.1rem; color: #fff; margin-bottom: 5px;">Au Nom de la Rose — L'art de dire je t'aime par les fleurs</p>
-            <p>&copy; 2026 Tous droits réservés. Création artisanale.</p>
+            <h4>Au Nom de la Rose</h4>
+            <p>L'art de dire je t'aime par les fleurs — Création artisanale.</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">&copy; 2026 Tous droits réservés.</p>
         </div>
     </footer>
 
     <script>
-        let currentDescText = "✨ **Vue 1 :** Allée d'honneur majestueuse décorée pour célébrer l'amour et l'élégance florale.";
-
         function changeImage(thumbElement, descText) {
-            const currentImg = document.getElementById('current-img');
-            currentImg.src = thumbElement.src;
-            
+            document.getElementById('current-img').src = thumbElement.src;
             document.querySelectorAll('.thumb').forEach(thumb => thumb.classList.remove('active'));
             thumbElement.classList.add('active');
-            
-            document.getElementById('img-desc').innerHTML = descText;
-            currentDescText = descText;
+            document.getElementById('img-desc').textContent = descText;
         }
 
         function openLightbox(imgElement) {
             const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            
-            lightboxImg.src = imgElement.src;
-            lightboxCaption.innerHTML = document.getElementById('img-desc').innerHTML;
+            document.getElementById('lightbox-img').src = imgElement.src;
+            document.getElementById('lightbox-caption').textContent = document.getElementById('img-desc').textContent;
             lightbox.style.display = 'flex';
         }
 
@@ -422,13 +449,11 @@
         function selectSize(price, sizeName, element) {
             document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
-            
             document.getElementById('price-tag').textContent = price;
 
             const encodedText = encodeURIComponent(`Bonjour, je souhaite commander le Bouquet Tendresse (${sizeName})`);
             document.getElementById('whatsapp-btn').href = `https://wa.me/4515221767454?text=${encodedText}`;
         }
     </script>
-
 </body>
 </html>
