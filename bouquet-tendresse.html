@@ -187,12 +187,13 @@
         }
 
         .size-btn { 
-            padding: 10px 20px; 
+            padding: 10px 16px; 
             border: 1.5px solid #ddd; 
             background: white; 
             border-radius: 25px; 
             cursor: pointer; 
             font-weight: bold; 
+            font-size: 0.9rem;
             transition: all 0.2s ease; 
         }
 
@@ -316,7 +317,7 @@
         </div>
 
         <div class="love-banner">
-            <i class="fa-solid fa-seedling" style="color: var(--rose-accent); margin-right: 8px;"></i> 
+            <i class="fa-solid fa-seedling" style="color: var(--rose-accent); margin-right: 8px;"><span> 
             <em>"Les fleurs sont les doux mots que la nature chuchote à nos cœurs."</em> Découvrez les déclinaisons et décors inspirants de notre Bouquet Tendresse à travers nos 8 compositions exclusives.
         </div>
 
@@ -348,24 +349,25 @@
                 <h1>Bouquet Tendresse</h1>
                 <p style="color: #666; font-size: 1.05rem;">Douceur pastel de pivoines, roses délicates et eucalyptus frais. Une composition poétique et chaleureuse façonnée à la main pour exprimer toute votre affection et célébrer l'amour sous toutes ses formes.</p>
 
-                <div class="price-display" id="price-tag">32 €</div>
+                <div class="price-display" id="price-tag">25 €</div>
 
-                <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Choisissez la taille idéale :</label>
+                <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Choisissez la taille / le format :</label>
                 <div class="size-selector">
-                    <button class="size-btn active" onclick="selectSize('32 €', 'Taille S (32 €)', this)">Taille S (32 €)</button>
-                    <button class="size-btn" onclick="selectSize('48 €', 'Taille M (48 €)', this)">Taille M (48 €)</button>
-                    <button class="size-btn" onclick="selectSize('65 €', 'Taille L (65 €)', this)">Taille L (65 €)</button>
+                    <button class="size-btn active" onclick="selectSize('25 €', 'Format Découverte (25 €)', this)">Format Découverte (25 €)</button>
+                    <button class="size-btn" onclick="selectSize('35 €', 'Taille Standard (35 €)', this)">Taille Standard (35 €)</button>
+                    <button class="size-btn" onclick="selectSize('45 €', 'Taille Généreuse (45 €)', this)">Taille Généreuse (45 €)</button>
+                    <button class="size-btn" onclick="selectSize('65 €', 'Format Prestige (65 €)', this)">Format Prestige (65 €)</button>
                 </div>
 
                 <ul class="features-list">
                     <li><i class="fa-solid fa-check-circle"></i> <strong>Composition :</strong> Roses pastel, pivoines de saison, œillets fins & eucalyptus.</li>
                     <li><i class="fa-solid fa-truck-fast"></i> <strong>Livraison :</strong> Soignée et rapide à domicile ou sur le lieu de l'événement.</li>
-                    <li><i class="fa-solid fa-hand-holding-heart"><span></i> <strong>Fraîcheur garantie :</strong> Fleurs coupées du jour par notre artisane fleuriste.</li>
+                    <li><i class="fa-solid fa-hand-holding-heart"></i> <strong>Fraîcheur garantie :</strong> Fleurs coupées du jour par notre artisane fleuriste.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px; color: var(--secondary-color); font-size: 1.1rem;">Commander ce bouquet :</h3>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Tendresse%20(Taille%20S%20-%2032%20€)" class="btn-action btn-whatsapp" target="_blank">
+                    <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Tendresse%20(Format%20Découverte%20-%2025%20€)" class="btn-action btn-whatsapp" target="_blank">
                         <i class="fa-brands fa-whatsapp fa-lg"></i> Commander instantanément via WhatsApp
                     </a>
                     <a href="tel:+4515221767454" class="btn-action btn-call">
