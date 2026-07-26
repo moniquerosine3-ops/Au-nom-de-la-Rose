@@ -13,6 +13,7 @@
             --secondary-color: #2c2a29; 
             --text-dark: #4a4543; 
             --border-color: #e6dfd5;
+            --rose-accent: #d36e53;
         }
 
         body { 
@@ -107,7 +108,7 @@
             font-weight: 300;
         }
 
-        /* Grille des Prestations */
+        /* Grille des Prestations & Bouquets */
         .prestations-section {
             padding: 60px 0;
         }
@@ -127,6 +128,21 @@
             font-size: 0.95rem;
             margin-bottom: 40px;
             font-weight: 300;
+        }
+
+        .payment-instructions {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .payment-instructions strong {
+            color: var(--secondary-color);
         }
 
         .cards-grid {
@@ -157,7 +173,7 @@
 
         .card-content {
             padding: 25px;
-            text-align: center;
+            text-align: left;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -169,6 +185,14 @@
             font-size: 1.3rem;
             color: var(--secondary-color);
             margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .card-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--rose-accent);
+            font-weight: bold;
             margin-bottom: 10px;
         }
 
@@ -179,23 +203,44 @@
             font-weight: 300;
         }
 
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
         .btn-card {
             display: inline-block;
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 500;
+            text-align: center;
             transition: background 0.2s;
         }
 
         .btn-card:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
         }
 
-        /* Section Contact & Horaires Mis à jour */
+        .btn-paypal-card {
+            background-color: #0070ba;
+        }
+        .btn-paypal-card:hover {
+            background-color: #003087;
+        }
+
+        .btn-wa-card {
+            background-color: #2d6a4f;
+        }
+        .btn-wa-card:hover {
+            background-color: #1b4332;
+        }
+
+        /* Section Contact & Horaires */
         .contact-section {
             background: white;
             padding: 50px;
@@ -308,51 +353,86 @@
         <section id="accueil" class="hero-section">
             <h2>L'art de dire je t'aime par les fleurs</h2>
             <p>Des compositions uniques, élégantes et poétiques façonnées à la main pour illuminer chacun de vos moments précieux.</p>
-            <a href="#bouquets" class="btn-card">Découvrir nos bouquets</a>
+            <a href="#bouquets" class="btn-card" style="padding: 12px 25px; font-size: 1rem; display: inline-block;">Découvrir nos bouquets</a>
         </section>
 
         <!-- Prestations / Bouquets -->
         <section id="bouquets" class="prestations-section">
-            <h2 class="section-title">Nos Prestations Sur-Mesure</h2>
-            <p class="section-subtitle">Un accompagnement floral personnalisé pour chaque occasion</p>
+            <h2 class="section-title">Nos Bouquets & Compositions</h2>
+            <p class="section-subtitle">Commandez en toute simplicité (Formats de 25 € à 65 €)</p>
+
+            <div class="payment-instructions">
+                <i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> 
+                <strong>Mode d'emploi :</strong> Payez via PayPal à l'adresse <u>celinecohen2025@gmail.com</u>, puis envoyez impérativement votre reçu de confirmation sur notre WhatsApp pour valider la commande.
+            </div>
 
             <div class="cards-grid">
+                <!-- Bouquet Tendresse -->
                 <div class="card">
-                    <img src="images/bouquet-tendresse-1.jpeg" alt="Mariages & Événements">
+                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Bouquet Tendresse">
                     <div class="card-content">
                         <div>
-                            <h3>Mariages & Événements</h3>
-                            <p>Décors sur mesure pour votre grand jour : arches, centres de table et bouquets de mariée.</p>
+                            <h3>Bouquet Tendresse</h3>
+                            <div class="card-price">À partir de 25 €</div>
+                            <p>Douceur pastel de pivoines, roses délicates et eucalyptus frais pour exprimer votre affection.</p>
                         </div>
-                        <a href="bouquet-tendresse.html" class="btn-card">En savoir plus</a>
+                        <div class="card-actions">
+                            <a href="https://www.paypal.com/ncp/payment?hosted_button_id=DEMO" class="btn-card btn-paypal-card" target="_blank">
+                                <i class="fa-brands fa-paypal"></i> Payer avec PayPal
+                            </a>
+                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20paiement%20PayPal%20pour%20le%20Bouquet%20Tendresse.%20(Compte:%20celinecohen2025@gmail.com)" class="btn-card btn-wa-card" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
+                            </a>
+                            <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Bouquet Passion -->
                 <div class="card">
-                    <img src="images/abonnement.jpeg" alt="Abonnements Floraux">
+                    <img src="images/Bouquet Passion 1.jpeg" alt="Bouquet Passion" onerror="this.src='images/Bouquet Tendresse 2.jpeg'">
                     <div class="card-content">
                         <div>
-                            <h3>Abonnements Floraux</h3>
-                            <p>Remplissez vos espaces régulièrement (entreprises, hôtels, restaurants ou résidences).</p>
+                            <h3>Bouquet Passion</h3>
+                            <div class="card-price">À partir de 25 €</div>
+                            <p>Un éclat flamboyant de roses rouges et de tons chaleureux pour célébrer l'amour intense.</p>
                         </div>
-                        <a href="bouquet-tendresse.html" class="btn-card">En savoir plus</a>
+                        <div class="card-actions">
+                            <a href="https://www.paypal.com/ncp/payment?hosted_button_id=DEMO" class="btn-card btn-paypal-card" target="_blank">
+                                <i class="fa-brands fa-paypal"></i> Payer avec PayPal
+                            </a>
+                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20paiement%20PayPal%20pour%20le%20Bouquet%20Passion.%20(Compte:%20celinecohen2025@gmail.com)" class="btn-card btn-wa-card" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
+                            </a>
+                            <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Bouquet Éclat -->
                 <div class="card">
-                    <img src="images/livraison.jpeg" alt="Livraison à domicile">
+                    <img src="images/Bouquet Eclat 1.jpeg" alt="Bouquet Éclat" onerror="this.src='images/Bouquet Tendresse 3.jpeg'">
                     <div class="card-content">
                         <div>
-                            <h3>Livraison à domicile</h3>
-                            <p>Vos fleurs fraîches livrées avec soin directement entre les mains de leurs destinataires.</p>
+                            <h3>Bouquet Éclat</h3>
+                            <div class="card-price">À partir de 25 €</div>
+                            <p>Une composition lumineuse et joyeuse pour ensoleiller toutes vos plus belles occasions.</p>
                         </div>
-                        <a href="bouquet-tendresse.html" class="btn-card">En savoir plus</a>
+                        <div class="card-actions">
+                            <a href="https://www.paypal.com/ncp/payment?hosted_button_id=DEMO" class="btn-card btn-paypal-card" target="_blank">
+                                <i class="fa-brands fa-paypal"></i> Payer avec PayPal
+                            </a>
+                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20paiement%20PayPal%20pour%20le%20Bouquet%20Eclat.%20(Compte:%20celinecohen2025@gmail.com)" class="btn-card btn-wa-card" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
+                            </a>
+                            <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section Contact & Horaires Mis à jour -->
+        <!-- Section Contact & Horaires -->
         <section id="contact" class="contact-section">
             <h3>Contactez-nous & Commandez</h3>
             <p style="color: #666; font-size: 0.95rem; font-weight: 300;">Notre équipe est disponible pour répondre à vos questions et préparer vos commandes.</p>
