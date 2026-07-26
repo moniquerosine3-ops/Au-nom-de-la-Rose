@@ -84,9 +84,7 @@
             transition: color 0.2s;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
-        }
+        nav a:hover { color: var(--primary-color); }
 
         /* Hero Section */
         .hero-section {
@@ -112,9 +110,61 @@
             font-weight: 300;
         }
 
-        /* Grille des Bouquets (Forcée côte à côte en 3 colonnes) */
+        /* Section Biographie Propriétaire */
+        .owner-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .owner-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .owner-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+
+        .owner-photos {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .owner-photos img {
+            width: 140px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .owner-text h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .owner-text p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        /* Grille des Bouquets */
         .prestations-section {
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         .section-title {
@@ -205,9 +255,7 @@
             transition: background 0.2s;
         }
 
-        .btn-card:hover {
-            background-color: var(--primary-color);
-        }
+        .btn-card:hover { background-color: var(--primary-color); }
 
         /* Formulaire de Commande */
         .order-form-section {
@@ -238,18 +286,8 @@
             font-size: 0.95rem;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-        }
-
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; color: var(--secondary-color); }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
@@ -260,15 +298,8 @@
             background-color: #faf8f5;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .form-row { grid-template-columns: 1fr; }
-        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } }
 
         .btn-submit {
             background-color: var(--secondary-color);
@@ -283,9 +314,7 @@
             transition: background 0.2s;
         }
 
-        .btn-submit:hover {
-            background-color: var(--primary-color);
-        }
+        .btn-submit:hover { background-color: var(--primary-color); }
 
         /* Contact & Magasin */
         .contact-section {
@@ -305,13 +334,7 @@
             margin-bottom: 10px;
         }
 
-        .shop-address-box {
-            font-size: 1.05rem;
-            color: var(--secondary-color);
-            margin: 15px 0;
-            font-weight: 500;
-        }
-
+        .shop-address-box { font-size: 1.05rem; color: var(--secondary-color); margin: 15px 0; font-weight: 500; }
         .hours-box {
             background: var(--primary-light);
             display: inline-block;
@@ -321,29 +344,10 @@
             border-left: 3px solid var(--primary-color);
             text-align: left;
         }
+        .hours-box h4 { margin: 0 0 8px 0; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); }
+        .hours-box p { margin: 4px 0; font-size: 0.92rem; color: var(--text-dark); }
 
-        .hours-box h4 {
-            margin: 0 0 8px 0;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--secondary-color);
-        }
-
-        .hours-box p {
-            margin: 4px 0;
-            font-size: 0.92rem;
-            color: var(--text-dark);
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
+        .contact-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
         .btn-contact {
             display: inline-flex;
             align-items: center;
@@ -356,7 +360,6 @@
             font-size: 0.9rem;
             transition: opacity 0.2s;
         }
-
         .btn-contact:hover { opacity: 0.9; }
         .btn-tel { background-color: var(--secondary-color); }
         .btn-wa { background-color: #2d6a4f; }
@@ -370,21 +373,12 @@
             font-size: 0.85rem; 
             letter-spacing: 0.5px;
         }
-
-        footer h4 {
-            color: white;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
+        footer h4 { color: white; font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: normal; }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        ✨ Votre artisan fleuriste — Livraison et retraits en boutique
-    </div>
+    <div class="top-bar">✨ Votre artisan fleuriste — Livraison et retraits en boutique</div>
 
     <header>
         <div class="container header-content">
@@ -412,7 +406,22 @@
             <a href="bouquet-tendresse.html" class="btn-card" style="display: inline-block; padding: 12px 30px; width: auto; text-decoration: none;">Découvrir nos bouquets</a>
         </section>
 
-        <!-- Prestations / Bouquets (Utilisation de vos fichiers images personnels : brigitte.jpg, etc.) -->
+        <!-- Section Biographie & Photos de la Propriétaire -->
+        <section class="owner-section">
+            <div class="owner-grid">
+                <div class="owner-photos">
+                    <img src="images/brigitte.jpg" alt="Brigitte - Propriétaire">
+                    <img src="images/Brigitte.jpg" alt="Brigitte - Créatrice florale">
+                </div>
+                <div class="owner-text">
+                    <h3>Rencontrez Brigitte, votre artisan fleuriste</h3>
+                    <p>Passionnée par la poésie des végétaux et l'art de sublimer les émotions, je mets tout mon savoir-faire et ma créativité au service de vos plus beaux événements de vie.</p>
+                    <p>Chaque composition est pensée avec amour dans notre boutique située au 2 Rue du Cimetière à La Boixe, pour vous garantir fraîcheur, élégance et raffinement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prestations / Bouquets avec de vraies images de fleurs -->
         <section id="bouquets" class="prestations-section">
             <h2 class="section-title">Nos Bouquets & Compositions</h2>
             <p class="section-subtitle">Commandez en toute simplicité (Formats de 25 € à 65 €)</p>
@@ -420,7 +429,7 @@
             <div class="cards-grid">
                 <!-- Bouquet Tendresse -->
                 <div class="card">
-                    <img src="images/brigitte.jpg" alt="Bouquet Tendresse">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80" alt="Bouquet Tendresse">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Tendresse</h3>
@@ -433,7 +442,7 @@
 
                 <!-- Bouquet Passion -->
                 <div class="card">
-                    <img src="images/Brigitte.jpg" alt="Bouquet Passion">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Bouquet Passion">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Passion</h3>
@@ -446,7 +455,7 @@
 
                 <!-- Bouquet Éclat -->
                 <div class="card">
-                    <img src="images/brigitte1.jpg" alt="Bouquet Éclat">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80" alt="Bouquet Éclat">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Éclat</h3>
