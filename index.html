@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Au Nom de la Rose | Artisan Floral</title>
+    <title>Bouquet Passion | Au Nom de la Rose</title>
     
     <!-- CSS principal -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- CDN Font Awesome pour les icônes -->
+    <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -18,118 +18,55 @@
             <h1 class="logo-text"><i class="fa-solid fa-rose"></i> Au Nom de la Rose</h1>
             <nav>
                 <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#boutique">La Boutique</a></li>
-                    <li><a href="#prestations">Prestations</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#boutique">La Boutique</a></li>
+                    <li><a href="index.html#prestations">Prestations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Section Hero -->
-        <section id="accueil" class="hero" style="background-image: url('images/hero.jpg');">
-            <div class="hero-content">
-                <h1>Au Nom de la Rose</h1>
-                <p>Artisan floral, créations uniques pour vos moments précieux.</p>
-                <a href="#contact" class="btn">Nous contacter</a>
+    <main class="container" style="padding: 50px 0;">
+        <a href="index.html#boutique" class="btn" style="margin-bottom: 30px; display: inline-block;">
+            <i class="fa-solid fa-arrow-left"></i> Retour à la boutique
+        </a>
+
+        <div class="content-flex">
+            <div style="flex: 1;">
+                <img src="images/bouquet-1.jpg" alt="Bouquet Passion" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
-        </section>
 
-        <!-- Section Notre Histoire -->
-        <section id="fleuriste">
-            <div class="container content-flex">
-                <img src="images/brigitte.jpg" alt="Brigitte" class="profile-img">
-                <div class="text-block">
-                    <h2>Notre Histoire</h2>
-                    <p>Bienvenue dans l'univers de Brigitte, artisane passionnée façonnant des compositions florales sur mesure.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Boutique avec liens vers les pages de bouquets -->
-        <section id="boutique">
-            <div class="container">
-                <h2>Nos Bouquets</h2>
-                <div class="grid">
-
-                    <!-- Bouquet Passion -->
-                    <a href="bouquet-passion.html" class="card-link">
-                        <div class="card">
-                            <img src="images/bouquet-1.jpg" alt="Bouquet Passion">
-                            <h3>Bouquet Passion</h3>
-                        </div>
-                    </a>
-
-                    <!-- Bouquet Tendresse -->
-                    <a href="bouquet-tendresse.html" class="card-link">
-                        <div class="card">
-                            <img src="images/bouquet-2.jpg" alt="Bouquet Tendresse">
-                            <h3>Bouquet Tendresse</h3>
-                        </div>
-                    </a>
-
-                    <!-- Bouquet Éclat -->
-                    <a href="bouquet-eclat.html" class="card-link">
-                        <div class="card">
-                            <img src="images/bouquet-3.jpg" alt="Bouquet Éclat">
-                            <h3>Bouquet Éclat</h3>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Prestations -->
-        <section id="prestations">
-            <div class="container">
-                <h2>Nos Prestations</h2>
-                <div class="grid">
-                    <div class="card">
-                        <img src="images/mariage.jpg" alt="Mariages">
-                        <h3>Mariages & Événements</h3>
-                        <p>Décors sur mesure pour votre grand jour.</p>
-                    </div>
-                    <div class="card">
-                        <img src="images/boutique.jpg" alt="Abonnements">
-                        <h3>Abonnements Floraux</h3>
-                        <p>Fleurissez vos espaces régulièrement.</p>
-                    </div>
-                    <div class="card">
-                        <img src="images/livraison.jpg" alt="Livraison">
-                        <h3>Livraison à domicile</h3>
-                        <p>Vos fleurs fraîches livrées avec soin.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact">
-            <div class="container">
-                <h2>Contactez-nous</h2>
+            <div class="text-block" style="flex: 1;">
+                <h1 style="color: #d4a373; margin-top: 0;">Bouquet Passion</h1>
+                <p style="font-size: 1.2rem; font-weight: bold; color: #333;">Composition florale raffinée et romantique</p>
                 
-                <div class="horaires">
-                    <h3><i class="fa-solid fa-clock"></i> Nos Horaires</h3>
-                    <p><strong>Du lundi au samedi :</strong> de 9h00 à 20h00</p>
-                    <p><strong>Le dimanche :</strong> de 9h00 à 13h00</p>
-                </div>
+                <p>Le <strong>Bouquet Passion</strong> est une création artisanale éclatante, combinant des teintes intenses de pourpre, de rose et de blanc. Assemblé à la main par Brigitte, il exprime l'amour, l'élégance et la générosité.</p>
 
-                <div class="contact-links">
-                    <p><a href="tel:+4915221767464" class="btn-contact"><i class="fa-solid fa-phone"></i> Appeler au +49 1522 1767464</a></p>
-                    <p><a href="https://wa.me/4915221767464" class="btn-contact" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp : +49 1522 1767464</a></p>
-                    <p><a href="mailto:LC53142158@gmail.com" class="btn-contact"><i class="fa-solid fa-envelope"></i> E-mail : LC53142158@gmail.com</a></p>
+                <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #d4a373;"></i> <strong>Fleurs :</strong> Roses fraîches, œillets, orchidées premium</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #d4a373;"></i> <strong>Occasions :</strong> Déclaration d'amour, anniversaire, célébrations</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #d4a373;"></i> <strong>Fraîcheur :</strong> Assemblé à la commande</li>
+                </ul>
+
+                <div style="margin-top: 30px;">
+                    <h3>Commander ce bouquet :</h3>
+                    <div class="contact-links" style="justify-content: flex-start; gap: 15px;">
+                        <a href="https://wa.me/4915221767464?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Passion." class="btn-contact" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:+4915221767464" class="btn-contact">
+                            <i class="fa-solid fa-phone"></i> Appeler
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
