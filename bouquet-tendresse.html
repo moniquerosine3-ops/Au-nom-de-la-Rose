@@ -7,214 +7,219 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #d4a373;
-            --secondary-color: #2b2b2b;
-            --accent-color: #5d3587;
-            --bg-light: #fdfbf7;
-            --text-dark: #333333;
+        :root { 
+            --primary-color: #d4a373; 
+            --secondary-color: #2b2b2b; 
+            --bg-light: #fdfbf7; 
+            --text-dark: #333333; 
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafafa;
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background-color: #fafafa; 
+            color: var(--text-dark); 
+            margin: 0; 
+            line-height: 1.6; 
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
         }
 
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .top-bar { 
+            background-color: var(--primary-color); 
+            color: white; 
+            text-align: center; 
+            padding: 8px; 
+            font-size: 0.85rem; 
         }
 
-        /* Header & Nav */
-        header {
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        header { 
+            background: white; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
         }
 
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            font-family: Georgia, serif;
+        .logo h1 { 
+            margin: 0; 
+            font-size: 1.8rem; 
+            color: var(--secondary-color); 
+            font-family: Georgia, serif; 
         }
 
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        nav ul { 
+            display: flex; 
+            gap: 20px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
         }
 
-        nav a:hover {
-            color: var(--primary-color);
+        /* Galerie du Produit */
+        .product-page { 
+            margin: 30px 0; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
         }
 
-        /* Product Detail Layout */
-        .product-page {
-            margin: 40px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        .product-gallery { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
         }
 
-        .product-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            object-fit: cover;
-            height: 450px;
-            cursor: pointer;
+        .main-image img { 
+            width: 100%; 
+            height: 440px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+            transition: transform 0.2s ease; 
         }
 
-        .product-info h1 {
-            color: var(--secondary-color);
-            font-family: Georgia, serif;
-            margin-top: 0;
+        .main-image img:hover { 
+            transform: scale(1.01); 
         }
 
-        .price-tag {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin: 15px 0;
+        /* Grille pour les 8 vignettes */
+        .thumbnails { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 10px; 
         }
 
-        .size-selector {
-            margin: 25px 0;
+        .thumb { 
+            width: 100%; 
+            height: 70px; 
+            object-fit: cover; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            border: 2px solid transparent; 
+            transition: all 0.2s ease; 
+            opacity: 0.75; 
         }
 
-        .size-selector label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .thumb:hover, .thumb.active { 
+            border-color: var(--primary-color); 
+            opacity: 1; 
+            transform: translateY(-2px); 
         }
 
-        .size-options {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        .product-info h1 { 
+            color: var(--secondary-color); 
+            font-family: Georgia, serif; 
+            margin-top: 0; 
         }
 
-        .size-btn {
-            border: 2px solid #ddd;
-            background: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+        .price-display { 
+            font-size: 1.6rem; 
+            font-weight: bold; 
+            color: var(--primary-color); 
+            margin: 15px 0; 
         }
 
-        .size-btn:hover, .size-btn.active {
-            border-color: var(--primary-color);
-            background-color: var(--bg-light);
-            color: var(--primary-color);
+        .size-selector { 
+            display: flex; 
+            gap: 10px; 
+            margin: 20px 0; 
+            flex-wrap: wrap; 
         }
 
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 30px;
+        .size-btn { 
+            padding: 10px 18px; 
+            border: 1px solid #ddd; 
+            background: white; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: all 0.2s ease; 
         }
 
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            border-radius: 30px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
+        .size-btn.active, .size-btn:hover { 
+            background-color: var(--primary-color); 
+            color: white; 
+            border-color: var(--primary-color); 
         }
 
-        .btn-call { background-color: var(--primary-color); }
+        .btn-action { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            padding: 14px 20px; 
+            border-radius: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            margin-top: 10px; 
+        }
+
         .btn-whatsapp { background-color: #25d366; }
+        .btn-call { background-color: var(--primary-color); }
 
-        /* Lightbox */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
+        /* Lightbox (Plein écran) */
+        .lightbox-modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.88); 
+            justify-content: center; 
+            align-items: center; 
+            cursor: zoom-out; 
         }
 
-        .lightbox-modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
+        .lightbox-modal img { 
+            max-width: 90%; 
+            max-height: 90%; 
+            border-radius: 8px; 
         }
 
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            color: #ccc;
-            padding: 40px 0 20px;
-            margin-top: 50px;
+        footer { 
+            background: var(--secondary-color); 
+            color: #ccc; 
+            padding: 30px 0; 
+            margin-top: 50px; 
+            text-align: center; 
+            font-size: 0.85rem; 
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <i class="fa-solid fa-truck-fast"></i> Livraison rapide à domicile & créations sur-mesure préparées par Brigitte
-    </div>
+    <div class="top-bar"><i class="fa-solid fa-truck-fast"></i> Création artisanale préparée avec soin par Brigitte</div>
 
-    <!-- HEADER -->
     <header>
         <div class="container header-content">
-            <div class="logo">
-                <h1>Au Nom de la Rose</h1>
-            </div>
+            <div class="logo"><h1>Au Nom de la Rose</h1></div>
             <nav>
                 <ul>
                     <li><a href="index.html#accueil">Accueil</a></li>
@@ -227,7 +232,6 @@
         </div>
     </header>
 
-    <!-- MAIN PRODUCT SECTION -->
     <main class="container">
         <div style="margin-top: 20px;">
             <a href="index.html#bouquets" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">
@@ -236,36 +240,46 @@
         </div>
 
         <div class="product-page">
-            <div class="product-image">
-                <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse" id="main-product-img">
-            </div>
-
-            <div class="product-info">
-                <h1>Bouquet Tendresse</h1>
-                <p style="color: #666; font-size: 1.05rem;">
-                    Une composition délicate aux tons doux et romantiques. Assemblé avec soin par Brigitte, ce bouquet associe la finesse des pivoines, la grâce des roses pastel et la fraîcheur verdoyante de l'eucalyptus.
-                </p>
-
-                <div class="price-tag" id="display-price">32 €</div>
-
-                <div class="size-selector">
-                    <label>Choisissez votre taille :</label>
-                    <div class="size-options">
-                        <button class="size-btn active" onclick="updatePrice(32, 'Taille S (Classique)', event)">Taille S - 32 €</button>
-                        <button class="size-btn" onclick="updatePrice(55, 'Taille M (Généreux)', event)">Taille M - 55 €</button>
-                        <button class="size-btn" onclick="updatePrice(78, 'Taille L (Prestige)', event)">Taille L - 78 €</button>
-                    </div>
+            <!-- Galerie 8 Photos -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Bouquet Tendresse - Image 1" id="current-img">
                 </div>
 
-                <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; margin: 20px 0;">
-                    <p style="margin: 0 0 5px 0; font-weight: bold;"><i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> Conseils d'entretien :</p>
-                    <p style="margin: 0; font-size: 0.88rem; color: #555;">Recoupez les tiges en biais tous les 2 jours et renouvellez l'eau fraîche de votre vase pour une fraîcheur prolongée.</p>
+                <div class="thumbnails">
+                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Vue 1" class="thumb active" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 2.jpeg" alt="Vue 2" class="thumb" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 3.jpeg" alt="Vue 3" class="thumb" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 4.jpeg" alt="Vue 4" class="thumb" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 5.jpeg" alt="Vue 5" class="thumb" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 6.jpeg" alt="Vue 6" class="thumb" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 7.jpeg" alt="Vue 7" class="thumb" onclick="changeImage(this)">
+                    <img src="images/Bouquet Tendresse 8.jpeg" alt="Vue 8" class="thumb" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- Informations Produit -->
+            <div class="product-info">
+                <h1>Bouquet Tendresse</h1>
+                <p style="color: #666;">Douceur pastel de pivoines, roses délicates et eucalyptus. Une composition poétique parfaite pour exprimer toute votre affection.</p>
+
+                <div class="price-display" id="price-tag">32 €</div>
+
+                <label style="font-weight: bold; color: var(--secondary-color);">Choisissez la taille du bouquet :</label>
+                <div class="size-selector">
+                    <button class="size-btn active" onclick="selectSize('32 €', this)">Taille S (32 €)</button>
+                    <button class="size-btn" onclick="selectSize('48 €', this)">Taille M (48 €)</button>
+                    <button class="size-btn" onclick="selectSize('65 €', this)">Taille L (65 €)</button>
+                </div>
+
+                <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.9rem; color: #555;">
+                    <p style="margin: 0;"><i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> <strong>Composition :</strong> Roses pastel, pivoines de saison, œillets fins et feuillage d'eucalyptus frais.</p>
                 </div>
 
                 <h3>Commander ce bouquet :</h3>
-                <div class="contact-buttons">
-                    <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Tendresse%20(Taille%20S%20-%2032€)" class="btn-action btn-whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Commander par WhatsApp
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Tendresse%20(Taille%20S%20-%2032%20€)" class="btn-action btn-whatsapp" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Commander via WhatsApp
                     </a>
                     <a href="tel:+4515221767454" class="btn-action btn-call">
                         <i class="fa-solid fa-phone"></i> Commander par Téléphone
@@ -275,43 +289,36 @@
         </div>
     </main>
 
-    <!-- LIGHTBOX MODAL -->
+    <!-- Modal Lightbox -->
     <div id="lightbox" class="lightbox-modal" onclick="this.style.display='none'">
         <img id="lightbox-img" src="" alt="Agrandissement">
     </div>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="container" style="text-align: center; font-size: 0.85rem;">
-            <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
-        </div>
+        <div class="container"><p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p></div>
     </footer>
 
-    <!-- SCRIPT TARIFAIRE & LIGHTBOX -->
     <script>
-        function updatePrice(price, sizeLabel, evt) {
-            document.getElementById('display-price').innerText = price + ' €';
-            
-            // Mettre à jour le bouton WhatsApp avec les bons détails
-            const message = encodeURIComponent(`Bonjour, je souhaite commander le Bouquet Tendresse (${sizeLabel} - ${price}€)`);
-            document.getElementById('whatsapp-btn').href = `https://wa.me/4515221767454?text=${message}`;
-
-            // Gestion de la classe active
-            const buttons = document.querySelectorAll('.size-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if (evt && evt.target) {
-                evt.target.classList.add('active');
-            }
+        function changeImage(thumbElement) {
+            document.getElementById('current-img').src = thumbElement.src;
+            document.querySelectorAll('.thumb').forEach(thumb => thumb.classList.remove('active'));
+            thumbElement.classList.add('active');
         }
 
-        // Lightbox
-        const mainImg = document.getElementById('main-product-img');
-        mainImg.addEventListener('click', () => {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = mainImg.src;
-            lightbox.style.display = 'flex';
+        document.getElementById('current-img').addEventListener('click', function() {
+            document.getElementById('lightbox-img').src = this.src;
+            document.getElementById('lightbox').style.display = 'flex';
         });
+
+        function selectSize(price, element) {
+            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('price-tag').textContent = price;
+            const sizeName = element.textContent;
+            const encodedText = encodeURIComponent(`Bonjour, je souhaite commander le Bouquet Tendresse (${sizeName})`);
+            document.getElementById('whatsapp-btn').href = `https://wa.me/4515221767454?text=${encodedText}`;
+        }
     </script>
+
 </body>
 </html>
