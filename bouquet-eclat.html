@@ -26,7 +26,6 @@
             margin: 0 auto;
         }
 
-        /* Style pour le bouton Retour à la boutique */
         .back-nav {
             margin-bottom: 20px;
         }
@@ -134,14 +133,59 @@
         .btn-open:hover {
             background-color: #c38e5d;
         }
+
+        /* Style pour la fenêtre modale intégrée sur le site */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+
+        .modal-text {
+            color: white;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
     <script>
-        function demanderTaille(nomProduit, urlImage) {
+        function voirProduit(nomProduit, urlImage) {
             let taille = prompt("Choisissez la taille pour " + nomProduit + " :\n1. Petit\n2. Moyen\n3. Grand\n\nVeuillez entrer votre choix :");
             if (taille) {
-                alert("Vous avez choisi la taille : " + taille + " pour " + nomProduit + ".");
-                window.open(urlImage, '_blank');
+                // Affiche l'image directement sur le site dans la modale
+                document.getElementById("imgModal").src = urlImage;
+                document.getElementById("textModal").innerText = nomProduit + " - Taille choisie : " + taille;
+                document.getElementById("popupModal").style.display = "flex";
             }
+        }
+
+        function fermerModal() {
+            document.getElementById("popupModal").style.display = "none";
         }
     </script>
 </head>
@@ -159,7 +203,7 @@
 
             <!-- Produit 1 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" alt="Bouquet Romance" onclick="demanderTaille('Bouquet Romance', 'WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" alt="Bouquet Romance" onclick="voirProduit('Bouquet Romance', 'WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Bouquet Romance</div>
@@ -167,13 +211,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg</div>
                         <div class="product-price">35,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Bouquet Romance', 'WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Bouquet Romance', 'WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 2 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" alt="Éclat Pastel" onclick="demanderTaille('Éclat Pastel', 'WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" alt="Éclat Pastel" onclick="voirProduit('Éclat Pastel', 'WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Éclat Pastel</div>
@@ -181,13 +225,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg</div>
                         <div class="product-price">40,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Éclat Pastel', 'WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Éclat Pastel', 'WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 3 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" alt="Douceur Botanique" onclick="demanderTaille('Douceur Botanique', 'WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" alt="Douceur Botanique" onclick="voirProduit('Douceur Botanique', 'WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Douceur Botanique</div>
@@ -195,13 +239,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg</div>
                         <div class="product-price">30,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Douceur Botanique', 'WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Douceur Botanique', 'WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 4 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.54.jpeg" alt="Harmonie Florale" onclick="demanderTaille('Harmonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.54.jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54.jpeg" alt="Harmonie Florale" onclick="voirProduit('Harmonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.54.jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Harmonie Florale</div>
@@ -209,13 +253,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54.jpeg</div>
                         <div class="product-price">32,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Harmonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.54.jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Harmonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.54.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 5 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" alt="Passion Rose" onclick="demanderTaille('Passion Rose', 'WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" alt="Passion Rose" onclick="voirProduit('Passion Rose', 'WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Passion Rose</div>
@@ -223,13 +267,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg</div>
                         <div class="product-price">55,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Passion Rose', 'WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Passion Rose', 'WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 6 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" alt="Jardin Secret" onclick="demanderTaille('Jardin Secret', 'WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" alt="Jardin Secret" onclick="voirProduit('Jardin Secret', 'WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Jardin Secret</div>
@@ -237,13 +281,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg</div>
                         <div class="product-price">38,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Jardin Secret', 'WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Jardin Secret', 'WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 7 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" alt="Tendre Promesse" onclick="demanderTaille('Tendre Promesse', 'WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" alt="Tendre Promesse" onclick="voirProduit('Tendre Promesse', 'WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Tendre Promesse</div>
@@ -251,13 +295,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg</div>
                         <div class="product-price">42,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Tendre Promesse', 'WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Tendre Promesse', 'WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 8 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" alt="Symphonie Florale" onclick="demanderTaille('Symphonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" alt="Symphonie Florale" onclick="voirProduit('Symphonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Symphonie Florale</div>
@@ -265,13 +309,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg</div>
                         <div class="product-price">48,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Symphonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Symphonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 9 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" alt="Élégance Sauvage" onclick="demanderTaille('Élégance Sauvage', 'WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" alt="Élégance Sauvage" onclick="voirProduit('Élégance Sauvage', 'WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Élégance Sauvage</div>
@@ -279,13 +323,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg</div>
                         <div class="product-price">45,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Élégance Sauvage', 'WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Élégance Sauvage', 'WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 10 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55.jpeg" alt="Charme d'Antan" onclick="demanderTaille('Charme d\'Antan', 'WhatsApp Image 2026-07-26 at 04.29.55.jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55.jpeg" alt="Charme d'Antan" onclick="voirProduit('Charme d\'Antan', 'WhatsApp Image 2026-07-26 at 04.29.55.jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Charme d'Antan</div>
@@ -293,13 +337,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55.jpeg</div>
                         <div class="product-price">36,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Charme d\'Antan', 'WhatsApp Image 2026-07-26 at 04.29.55.jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Charme d\'Antan', 'WhatsApp Image 2026-07-26 at 04.29.55.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 11 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.56.jpeg" alt="Prestige Floral" onclick="demanderTaille('Prestige Floral', 'WhatsApp Image 2026-07-26 at 04.29.56.jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.56.jpeg" alt="Prestige Floral" onclick="voirProduit('Prestige Floral', 'WhatsApp Image 2026-07-26 at 04.29.56.jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Prestige Floral</div>
@@ -307,13 +351,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.56.jpeg</div>
                         <div class="product-price">50,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Prestige Floral', 'WhatsApp Image 2026-07-26 at 04.29.56.jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Prestige Floral', 'WhatsApp Image 2026-07-26 at 04.29.56.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 12 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" alt="Bouquet Éclat" onclick="demanderTaille('Bouquet Éclat', 'WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" alt="Bouquet Éclat" onclick="voirProduit('Bouquet Éclat', 'WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Bouquet Éclat</div>
@@ -321,13 +365,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg</div>
                         <div class="product-price">45,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Bouquet Éclat', 'WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Bouquet Éclat', 'WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 13 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" alt="Douceur Lilas" onclick="demanderTaille('Douceur Lilas', 'WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" alt="Douceur Lilas" onclick="voirProduit('Douceur Lilas', 'WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Douceur Lilas</div>
@@ -335,13 +379,13 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg</div>
                         <div class="product-price">39,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Douceur Lilas', 'WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Douceur Lilas', 'WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 14 -->
             <div class="product-card">
-                <img src="WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" alt="Étoile Pourpre" onclick="demanderTaille('Étoile Pourpre', 'WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg')">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" alt="Étoile Pourpre" onclick="voirProduit('Étoile Pourpre', 'WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg')">
                 <div class="product-info">
                     <div>
                         <div class="product-title">Étoile Pourpre</div>
@@ -349,11 +393,18 @@
                         <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg</div>
                         <div class="product-price">42,00 €</div>
                     </div>
-                    <button class="btn-open" onclick="demanderTaille('Étoile Pourpre', 'WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg')">Ouvrir et consulter</button>
+                    <button class="btn-open" onclick="voirProduit('Étoile Pourpre', 'WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
         </div>
+    </div>
+
+    <!-- Fenêtre modale intégrée pour afficher l'image en grand sur le site -->
+    <div id="popupModal" class="modal">
+        <span class="close-modal" onclick="fermerModal()">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <div class="modal-text" id="textModal"></div>
     </div>
 
 </body>
