@@ -7,112 +7,99 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --primary-color: #8b7355; 
+        :root {
+            --primary-color: #8b7355;
             --primary-light: #f4efe6;
-            --secondary-color: #2c2a29; 
-            --text-dark: #4a4543; 
+            --secondary-color: #2c2a29;
+            --text-dark: #4a4543;
             --border-color: #e2ded8;
             --rose-accent: #c45d44;
         }
-
         *, *::before, *::after { box-sizing: border-box; }
-
-        body { 
-            font-family: 'Jost', sans-serif; 
-            background-color: #faf8f5; 
-            color: var(--text-dark); 
-            margin: 0; 
-            line-height: 1.6; 
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: #faf8f5;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.6;
         }
-
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
-
-        .top-bar { 
-            background-color: var(--secondary-color); 
-            color: #f4efea; 
-            text-align: center; 
-            padding: 10px; 
-            font-size: 0.85rem; 
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .top-bar {
+            background-color: var(--secondary-color);
+            color: #f4efea;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-
-        header { 
-            background: white; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             border-bottom: 1px solid var(--border-color);
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-
-        .header-content { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px 0; 
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
-
-        .logo h1 { 
-            margin: 0; 
-            font-size: 1.7rem; 
-            color: var(--secondary-color); 
-            font-family: 'Playfair Display', Georgia, serif; 
+        .logo h1 {
+            margin: 0;
+            font-size: 1.7rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', Georgia, serif;
             letter-spacing: 1px;
         }
-
-        nav ul { 
-            display: flex; 
-            gap: 20px; 
-            list-style: none; 
-            margin: 0; 
-            padding: 0; 
-            flex-wrap: wrap;
-        }
-
-        nav a { 
-            text-decoration: none; 
-            color: var(--text-dark); 
-            font-weight: 500; 
-            font-size: 0.9rem; 
+        nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
             letter-spacing: 0.5px;
             transition: color 0.2s;
         }
-
         nav a:hover { color: var(--primary-color); }
 
-        /* Détails du Bouquet */
+        /* Détails du Bouquet & Galerie */
         .product-detail-section {
             background: white;
-            padding: 50px;
+            padding: 40px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             margin: 40px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
-
         .product-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
-            align-items: center;
+            align-items: start;
         }
-
         @media (max-width: 768px) {
             .product-grid { grid-template-columns: 1fr; }
         }
-
-        .product-image img {
+        
+        /* Grille des 8 images */
+        .bouquet-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        .bouquet-photos img {
             width: 100%;
-            height: 400px;
+            height: 160px;
             object-fit: cover;
             border-radius: 6px;
             border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+        .bouquet-photos img:hover {
+            transform: scale(1.02);
         }
 
         .product-info h2 {
@@ -122,7 +109,6 @@
             margin-top: 0;
             margin-bottom: 15px;
         }
-
         .product-price {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.6rem;
@@ -130,7 +116,6 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
-
         .product-info p {
             color: #666;
             font-size: 1rem;
@@ -138,7 +123,6 @@
             margin-bottom: 20px;
             font-weight: 300;
         }
-
         .btn-order {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -149,24 +133,27 @@
             font-weight: 500;
             transition: background 0.2s;
         }
-
         .btn-order:hover { background-color: var(--primary-color); }
 
-        footer { 
-            background: var(--secondary-color); 
-            color: #999; 
-            padding: 40px 0; 
-            text-align: center; 
-            font-size: 0.85rem; 
+        footer {
+            background: var(--secondary-color);
+            color: #999;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
         }
-        footer h4 { color: white; font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: normal; }
+        footer h4 {
+            color: white;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
-
     <div class="top-bar">✨ Votre artisan fleuriste — Livraison et retraits en boutique</div>
-
     <header>
         <div class="container header-content">
             <div class="logo"><h1>Au Nom de la Rose</h1></div>
@@ -187,9 +174,18 @@
     <main class="container">
         <section class="product-detail-section">
             <div class="product-grid">
-                <div class="product-image">
-                    <img src="images/Bouquet%20Tendresse%206.jpeg" alt="Bouquet Tendresse">
+                <!-- Galerie des 8 images à la racine -->
+                <div class="bouquet-photos">
+                    <img src="Bouquet%20Tendresse%201.jpeg" alt="Bouquet Tendresse - Vue 1">
+                    <img src="Bouquet%20Tendresse%202.jpeg" alt="Bouquet Tendresse - Vue 2">
+                    <img src="Bouquet%20Tendresse%203.jpeg" alt="Bouquet Tendresse - Vue 3">
+                    <img src="Bouquet%20Tendresse%204.jpeg" alt="Bouquet Tendresse - Vue 4">
+                    <img src="Bouquet%20Tendresse%205.jpeg" alt="Bouquet Tendresse - Vue 5">
+                    <img src="Bouquet%20Tendresse%206.jpeg" alt="Bouquet Tendresse - Vue 6">
+                    <img src="Bouquet%20Tendresse%207.jpeg" alt="Bouquet Tendresse - Vue 7">
+                    <img src="Bouquet%20Tendresse%208.jpeg" alt="Bouquet Tendresse - Vue 8">
                 </div>
+
                 <div class="product-info">
                     <h2>Bouquet Tendresse</h2>
                     <div class="product-price">À partir de 25 €</div>
@@ -208,6 +204,5 @@
             <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">&copy; 2026 Tous droits réservés.</p>
         </div>
     </footer>
-
 </body>
 </html>
