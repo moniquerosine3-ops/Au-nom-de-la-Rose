@@ -83,7 +83,7 @@
             color: var(--primary-color);
         }
 
-        /* Hero Banner (Couverture) */
+        /* Hero Banner */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Bouquet 1.jpeg') center/cover;
             height: 55vh;
@@ -184,6 +184,11 @@
             margin-bottom: 10px;
             text-decoration: none;
             font-weight: bold;
+            display: block;
+        }
+
+        .card-title:hover {
+            color: var(--primary-color);
         }
 
         .card-price {
@@ -221,7 +226,7 @@
             margin-bottom: 10px;
         }
 
-        /* Galerie 2 Photos Brigitte */
+        /* Galerie Brigitte */
         .brigitte-gallery {
             display: flex;
             gap: 15px;
@@ -391,7 +396,7 @@
             <div class="feature-item">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <h4>Savoir-faire Artisanal</h4>
-                <p style="font-size: 0.85rem; color: #666;">Créations uniques réalisées à la main</p>
+                <p style="font-size: 0.85rem; color: #666;">Créations uniques réalisées à la hand</p>
             </div>
             <div class="feature-item">
                 <i class="fa-solid fa-truck-ramp-box"></i>
@@ -430,7 +435,9 @@
             <div class="grid-3">
                 <!-- Bouquet 1 -->
                 <div class="card">
-                    <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion" class="zoomable-img">
+                    <a href="bouquet-passion.html">
+                        <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion">
+                    </a>
                     <div class="card-body">
                         <div>
                             <a href="bouquet-passion.html" class="card-title">Bouquet Passion</a>
@@ -445,7 +452,9 @@
 
                 <!-- Bouquet 2 -->
                 <div class="card">
-                    <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse" class="zoomable-img">
+                    <a href="bouquet-tendresse.html">
+                        <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse">
+                    </a>
                     <div class="card-body">
                         <div>
                             <a href="bouquet-tendresse.html" class="card-title">Bouquet Tendresse</a>
@@ -460,7 +469,9 @@
 
                 <!-- Bouquet 3 -->
                 <div class="card">
-                    <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat" class="zoomable-img">
+                    <a href="bouquet-eclat.html">
+                        <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat">
+                    </a>
                     <div class="card-body">
                         <div>
                             <a href="bouquet-eclat.html" class="card-title">Bouquet Éclat</a>
@@ -483,8 +494,11 @@
             </div>
 
             <div class="grid-3">
+                <!-- Prestation 1 -->
                 <div class="card">
-                    <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements" class="zoomable-img">
+                    <a href="mariages-evenements.html">
+                        <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements">
+                    </a>
                     <div class="card-body">
                         <div>
                             <a href="mariages-evenements.html" class="card-title">Mariages & Événements</a>
@@ -496,8 +510,11 @@
                     </div>
                 </div>
 
+                <!-- Prestation 2 -->
                 <div class="card">
-                    <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux" class="zoomable-img">
+                    <a href="abonnements-floraux.html">
+                        <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux">
+                    </a>
                     <div class="card-body">
                         <div>
                             <a href="abonnements-floraux.html" class="card-title">Abonnements Floraux</a>
@@ -509,8 +526,11 @@
                     </div>
                 </div>
 
+                <!-- Prestation 3 -->
                 <div class="card">
-                    <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile" class="zoomable-img">
+                    <a href="livraison-domicile.html">
+                        <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile">
+                    </a>
                     <div class="card-body">
                         <div>
                             <a href="livraison-domicile.html" class="card-title">Livraison à domicile</a>
@@ -578,10 +598,9 @@
             <div>
                 <h4>Services</h4>
                 <ul style="font-size: 0.85rem;">
-                    <li>Livraison à domicile</li>
-                    <li>Mariages & Décoration</li>
-                    <li>Abonnements Entreprises</li>
-                    <li>Conseils d'entretien</li>
+                    <li><a href="livraison-domicile.html">Livraison à domicile</a></li>
+                    <li><a href="mariages-evenements.html">Mariages & Décoration</a></li>
+                    <li><a href="abonnements-floraux.html">Abonnements Entreprises</a></li>
                 </ul>
             </div>
             <div>
@@ -597,7 +616,7 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.zoomable-img, .card img, .brigitte-gallery img').forEach(image => {
+        document.querySelectorAll('.brigitte-gallery img').forEach(image => {
             image.addEventListener('click', () => {
                 const lightbox = document.getElementById('lightbox');
                 const lightboxImg = document.getElementById('lightbox-img');
