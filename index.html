@@ -3,147 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Au Nom de la Rose | Fleuriste Artisanal</title>
+    <title>Au Nom de la Rose</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+            padding-bottom: 15px;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #5d3587;
+            margin: 15px 0 5px 0;
+            text-decoration: none;
+            display: block;
+        }
+        .card-title:hover {
+            text-decoration: underline;
+        }
+        .card-desc {
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0 10px;
+            margin: 5px 0;
+        }
+        /* Style Section Contact */
+        .contact-section {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .btn-call { background-color: #d4a373; }
+        .btn-whatsapp { background-color: #25d366; }
+        .btn-email { background-color: #ff9f43; }
+    </style>
 </head>
 <body>
 
-    <!-- BARRE DE NOTIFICATION SUPERIEURE -->
-    <div style="background-color: #d4a373; color: white; text-align: center; padding: 8px 15px; font-size: 0.9rem;">
-        <i class="fa-solid fa-truck-fast"></i> Livraison rapide & bouquets frais préparés par votre artisan fleuriste Brigitte
-    </div>
-
-    <!-- EN-TÊTE ET NAVIGATION -->
-    <header style="position: sticky; top: 0; background: white; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <!-- HEADER / NAVIGATION -->
+    <header style="background: white; border-bottom: 1px solid #eee;">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px;">
-            <div class="logo">
-                <h1 style="font-family: 'Playfair Display', serif; color: #2b2b2b; margin: 0; font-size: 1.8rem;">Au Nom de la Rose</h1>
-            </div>
+            <h1 style="font-size: 1.5rem; margin: 0; color: #d4a373;">Au Nom de la Rose</h1>
             <nav>
-                <ul style="display: flex; gap: 25px; list-style: none; margin: 0; padding: 0;">
-                    <li><a href="#accueil" style="text-decoration: none; color: #333; font-weight: 500;">Accueil</a></li>
-                    <li><a href="#boutique" style="text-decoration: none; color: #333; font-weight: 500;">Nos Bouquets</a></li>
-                    <li><a href="#histoire" style="text-decoration: none; color: #333; font-weight: 500;">Notre Histoire</a></li>
-                    <li><a href="#contact" style="text-decoration: none; color: #333; font-weight: 500;">Contact</a></li>
-                </ul>
+                <a href="#bouquets" style="margin-left: 20px; text-decoration: none; color: #333;">Accueil</a>
+                <a href="#bouquets" style="margin-left: 20px; text-decoration: none; color: #333;">La Boutique</a>
+                <a href="#prestations" style="margin-left: 20px; text-decoration: none; color: #333;">Prestations</a>
+                <a href="#contact" style="margin-left: 20px; text-decoration: none; color: #333;">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- SECTION HERO / BANNIÈRE D'ACCUEIL (Style Flore Nature) -->
-    <section id="accueil" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero.jpg') center/cover no-repeat; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px;">
-        <div style="max-width: 800px;">
-            <h2 style="font-size: 3rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">L'art floral sous toutes ses formes</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 25px;">Des créations florales uniques et faites main pour sublimer tous vos événements.</p>
-            <a href="#boutique" class="btn" style="background-color: #d4a373; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 1rem; display: inline-block;">Découvrir la collection</a>
-        </div>
-    </section>
+    <main class="container">
 
-    <!-- SECTION ENGAGEMENTS ET SERVICES -->
-    <section style="background: #fdfbf7; padding: 40px 20px; border-bottom: 1px solid #eee;">
-        <div class="container" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center;">
-            <div style="flex: 1; min-width: 200px;">
-                <i class="fa-solid fa-leaf" style="font-size: 2rem; color: #d4a373; margin-bottom: 10px;"></i>
-                <h4 style="margin: 5px 0;">Fleurs Ultra Fraîches</h4>
-                <p style="font-size: 0.85rem; color: #666; margin: 0;">Sélectionnées quotidiennement avec passion</p>
-            </div>
-            <div style="flex: 1; min-width: 200px;">
-                <i class="fa-solid fa-hands-holding-circle" style="font-size: 2rem; color: #d4a373; margin-bottom: 10px;"></i>
-                <h4 style="margin: 5px 0;">Savoir-faire Artisanal</h4>
-                <p style="font-size: 0.85rem; color: #666; margin: 0;">Chaque bouquet est une pièce unique</p>
-            </div>
-            <div style="flex: 1; min-width: 200px;">
-                <i class="fa-solid fa-truck-ramp-box" style="font-size: 2rem; color: #d4a373; margin-bottom: 10px;"></i>
-                <h4 style="margin: 5px 0;">Livraison Soignée</h4>
-                <p style="font-size: 0.85rem; color: #666; margin: 0;">Directement à votre domicile ou événement</p>
-            </div>
-        </div>
-    </section>
+        <!-- SECTION NOS BOUQUETS -->
+        <div id="bouquets">
+            <h2 class="section-title">Nos Bouquets</h2>
+            <div class="grid-3">
+                
+                <!-- Bouquet 1 -->
+                <div class="card">
+                    <a href="bouquet-passion.html">
+                        <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion">
+                    </a>
+                    <a href="bouquet-passion.html" class="card-title">Bouquet Passion</a>
+                </div>
 
-    <!-- SECTION CATALOGUE (BOUTIQUE) -->
-    <section id="boutique" class="container" style="padding: 60px 20px;">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-size: 2.2rem; color: #2b2b2b;">Nos Collections Florales</h2>
-            <p style="color: #666;">Cliquez sur la gamme pour découvrir nos déclinaisons et tarifs</p>
+                <!-- Bouquet 2 -->
+                <div class="card">
+                    <a href="#">
+                        <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse">
+                    </a>
+                    <a href="#" class="card-title">Bouquet Tendresse</a>
+                </div>
+
+                <!-- Bouquet 3 -->
+                <div class="card">
+                    <a href="#">
+                        <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat">
+                    </a>
+                    <a href="#" class="card-title">Bouquet Éclat</a>
+                </div>
+
+            </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <!-- SECTION NOS PRESTATIONS -->
+        <div id="prestations">
+            <h2 class="section-title">Nos Prestations</h2>
+            <div class="grid-3">
+                
+                <!-- Prestation 1 -->
+                <div class="card">
+                    <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements">
+                    <div style="font-weight: bold; font-size: 0.95rem; margin-top: 10px;">Mariages & Événements</div>
+                    <div class="card-desc">Décors sur mesure pour votre grand jour.</div>
+                </div>
+
+                <!-- Prestation 2 -->
+                <div class="card">
+                    <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux">
+                    <div style="font-weight: bold; font-size: 0.95rem; margin-top: 10px;">Abonnements Floraux</div>
+                    <div class="card-desc">Fleurissez vos espaces régulièrement.</div>
+                </div>
+
+                <!-- Prestation 3 -->
+                <div class="card">
+                    <img src="images/livraison.jpg" alt="Livraison à domicile" onerror="this.src='images/Bouquet 6.jpeg'">
+                    <div style="font-weight: bold; font-size: 0.95rem; margin-top: 10px;">Livraison à domicile</div>
+                    <div class="card-desc">Vos fleurs fraîches livrées avec soin.</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION CONTACTEZ-NOUS -->
+        <div id="contact" class="contact-section">
+            <h2 style="font-size: 1.3rem; margin-bottom: 10px;">Contactez-nous</h2>
             
-            <!-- CARTE PRODUCT 1 : BOUQUET PASSION -->
-            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; text-align: center;">
-                <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion" style="width: 100%; height: 320px; object-fit: cover;">
-                <div style="padding: 20px;">
-                    <h3 style="margin-top: 0; color: #2b2b2b;">Bouquet Passion</h3>
-                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 15px;">Composition romantique de teintes intenses de pourpre, rose et blanc.</p>
-                    <p style="font-weight: bold; color: #d4a373; font-size: 1.1rem; margin-bottom: 15px;">De 26 € à 93 €</p>
-                    <a href="bouquet-passion.html" class="btn" style="background-color: #2b2b2b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; display: inline-block;">Découvrir la gamme</a>
-                </div>
-            </div>
+            <p style="font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;">
+                <i class="fa-regular fa-clock"></i> Nos Horaires
+            </p>
+            <p style="font-size: 0.85rem; color: #555; margin: 3px 0;"><strong>Du lundi au samedi :</strong> de 9h00 à 20h00</p>
+            <p style="font-size: 0.85rem; color: #555; margin: 3px 0;"><strong>Le dimanche :</strong> de 9h00 à 13h00</p>
 
-            <!-- CARTE PRODUCT 2 : BOUQUET TENDRESSE -->
-            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;">
-                <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse" style="width: 100%; height: 320px; object-fit: cover;">
-                <div style="padding: 20px;">
-                    <h3 style="margin-top: 0; color: #2b2b2b;">Bouquet Tendresse</h3>
-                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 15px;">Douceur pastel de pivoines, roses délicates et eucalyptus frais.</p>
-                    <p style="font-weight: bold; color: #d4a373; font-size: 1.1rem; margin-bottom: 15px;">À partir de 32 €</p>
-                    <a href="#" class="btn" style="background-color: #2b2b2b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; display: inline-block;">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- CARTE PRODUCT 3 : BOUQUET ÉCLAT -->
-            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;">
-                <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat" style="width: 100%; height: 320px; object-fit: cover;">
-                <div style="padding: 20px;">
-                    <h3 style="margin-top: 0; color: #2b2b2b;">Bouquet Éclat</h3>
-                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 15px;">Composition lumineuse aux tons chauds et ensoleillés.</p>
-                    <p style="font-weight: bold; color: #d4a373; font-size: 1.1rem; margin-bottom: 15px;">À partir de 29 €</p>
-                    <a href="#" class="btn" style="background-color: #2b2b2b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; display: inline-block;">En savoir plus</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECTION PRESENTATION / NOTRE HISTOIRE -->
-    <section id="histoire" style="background: #fdfbf7; padding: 60px 20px;">
-        <div class="container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <img src="images/Brigitte.jpg" alt="Brigitte - Artisan Fleuriste" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            </div>
-            <div style="flex: 1; min-width: 300px;">
-                <h2 style="font-size: 2rem; color: #2b2b2b; margin-bottom: 20px;">Notre Histoire & Passions</h2>
-                <p style="line-height: 1.6; color: #555;">Bienvenue chez <strong>Au Nom de la Rose</strong>, votre boutique artisanale. Brigitte met son savoir-faire et son amour des fleurs à votre service pour composer des créations sur-mesure adaptées à chaque instant de la vie.</p>
-                <p style="line-height: 1.6; color: #555;">Mariages, anniversaires, événements professionnels ou simplement le plaisir d'offrir : nous apportons une attention toute particulière à la fraîcheur et à l'harmonie des couleurs.</p>
+            <!-- Boutons de Contact -->
+            <div class="contact-buttons">
+                <a href="tel:+4515221767454" class="btn-action btn-call">
+                    <i class="fa-solid fa-phone"></i> Appeler au +45 1522 1767454
+                </a>
+                <a href="https://wa.me/4515221767454" class="btn-action btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp : +45 1522 1767454
+                </a>
+                <a href="mailto:LC53142158@gmail.com" class="btn-action btn-email">
+                    <i class="fa-regular fa-envelope"></i> E-mail : LC53142158@gmail.com
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- PIED DE PAGE (FOOTER COMPLET) -->
-    <footer id="contact" style="background: #222; color: #ccc; padding: 50px 20px 20px;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-            <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: white; font-family: 'Playfair Display', serif;">Au Nom de la Rose</h3>
-                <p style="font-size: 0.9rem; line-height: 1.5;">Votre artisan fleuriste passionné, dédié à l'élégance florale et au service sur-mesure.</p>
-            </div>
-            <div style="flex: 1; min-width: 200px;">
-                <h4 style="color: white;">Contact</h4>
-                <p style="font-size: 0.9rem; margin: 5px 0;"><i class="fa-solid fa-phone"></i> Téléphone : À venir</p>
-                <p style="font-size: 0.9rem; margin: 5px 0;"><i class="fa-brands fa-whatsapp"></i> WhatsApp : Disponible</p>
-            </div>
-            <div style="flex: 1; min-width: 200px;">
-                <h4 style="color: white;">Navigation</h4>
-                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                    <li><a href="#accueil" style="color: #ccc; text-decoration: none;">Accueil</a></li>
-                    <li><a href="#boutique" style="color: #ccc; text-decoration: none;">Nos Bouquets</a></li>
-                    <li><a href="bouquet-passion.html" style="color: #ccc; text-decoration: none;">Gamme Passion</a></li>
-                </ul>
-            </div>
-        </div>
-        <div style="text-align: center; border-top: 1px solid #333; margin-top: 40px; padding-top: 20px; font-size: 0.85rem;">
-            <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
-        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #888; margin-top: 40px;">
+        &copy; 2026 Au Nom de la Rose. Tous droits réservés.
     </footer>
 
 </body>
