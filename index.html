@@ -166,7 +166,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
-            cursor: pointer; /* Indique que l'image est cliquable */
+            cursor: pointer;
         }
 
         .card-body {
@@ -235,7 +235,7 @@
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            cursor: pointer; /* Indique que l'image est cliquable */
+            cursor: pointer;
             transition: transform 0.2s ease;
         }
 
@@ -276,7 +276,7 @@
         .btn-whatsapp { background-color: #25d366; }
         .btn-email { background-color: #ff9f43; }
 
-        /* Modal Lightbox pour afficher l'image en grand */
+        /* Modal Lightbox */
         .lightbox-modal {
             display: none;
             position: fixed;
@@ -371,7 +371,7 @@
         </div>
     </header>
 
-    <!-- BANNIÈRE HERO (COUVERTURE - NON CLIQUABLE) -->
+    <!-- BANNIÈRE HERO -->
     <section id="accueil" class="hero">
         <div>
             <h2>L'art floral sous toutes ses formes</h2>
@@ -403,11 +403,10 @@
 
     <main class="container">
 
-        <!-- RUBRIQUE L'ATELIER DE BRIGITTE AVEC LES 2 PHOTOS -->
+        <!-- RUBRIQUE L'ATELIER DE BRIGITTE -->
         <section id="histoire" style="margin-top: 50px;">
             <div style="background: white; border-radius: 12px; padding: 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
                 
-                <!-- GALERIE DES 2 IMAGES CLIQUABLES DE BRIGITTE -->
                 <div class="brigitte-gallery">
                     <img src="images/brigitte.jpg" alt="Brigitte - Photo 1" class="zoomable-img">
                     <img src="images/Brigitte.jpg" alt="Brigitte - Photo 2" class="zoomable-img">
@@ -444,17 +443,17 @@
                     </div>
                 </div>
 
-                <!-- Bouquet 2 -->
+                <!-- Bouquet 2 : LIEN VERS BOUQUET TENDRESSE METS À JOUR -->
                 <div class="card">
                     <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse" class="zoomable-img">
                     <div class="card-body">
                         <div>
-                            <a href="#" class="card-title">Bouquet Tendresse</a>
+                            <a href="bouquet-tendresse.html" class="card-title">Bouquet Tendresse</a>
                             <p style="font-size: 0.9rem; color: #666;">Douceur pastel de pivoines, roses délicates et eucalyptus.</p>
                         </div>
                         <div>
                             <div class="card-price">À partir de 32 €</div>
-                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box;">Découvrir</a>
+                            <a href="bouquet-tendresse.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box;">Voir la gamme</a>
                         </div>
                     </div>
                 </div>
@@ -484,7 +483,6 @@
             </div>
 
             <div class="grid-3">
-                <!-- Prestation 1 -->
                 <div class="card">
                     <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements" class="zoomable-img">
                     <div class="card-body">
@@ -495,7 +493,6 @@
                     </div>
                 </div>
 
-                <!-- Prestation 2 -->
                 <div class="card">
                     <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux" class="zoomable-img">
                     <div class="card-body">
@@ -506,7 +503,6 @@
                     </div>
                 </div>
 
-                <!-- Prestation 3 -->
                 <div class="card">
                     <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile" class="zoomable-img">
                     <div class="card-body">
@@ -519,7 +515,7 @@
             </div>
         </section>
 
-        <!-- SECTION CONTACT & HORAIRES -->
+        <!-- SECTION CONTACT -->
         <section id="contact" class="contact-box">
             <div style="text-align: center;">
                 <h2 style="margin-top: 0; color: var(--secondary-color);">Contactez-nous & Commandez</h2>
@@ -547,12 +543,12 @@
 
     </main>
 
-    <!-- FENÊTRE MODALE POUR AFFICHER EN GRAND AU CLIC -->
+    <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox-modal" onclick="this.style.display='none'">
         <img id="lightbox-img" src="" alt="Agrandissement">
     </div>
 
-    <!-- PIED DE PAGE -->
+    <!-- FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div>
@@ -565,6 +561,7 @@
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#bouquets">Nos Bouquets</a></li>
                     <li><a href="bouquet-passion.html">Gamme Passion</a></li>
+                    <li><a href="bouquet-tendresse.html">Gamme Tendresse</a></li>
                     <li><a href="#prestations">Prestations</a></li>
                 </ul>
             </div>
@@ -589,7 +586,6 @@
         </div>
     </footer>
 
-    <!-- SCRIPT JS POUR L'OUVERTURE EN GRAND DE N'IMPORTE QUELLE IMAGE (EXCEPTÉ LA BANNIÈRE DE COUVERTURE) -->
     <script>
         document.querySelectorAll('.zoomable-img, .card img, .brigitte-gallery img').forEach(image => {
             image.addEventListener('click', () => {
