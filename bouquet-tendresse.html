@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouquet Tendresse | Au Nom de la Rose</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary-color: #c98b68; 
-            --primary-light: #f7f3ed;
+            --primary-color: #8b7355; 
+            --primary-light: #f4efe6;
             --secondary-color: #2c2a29; 
             --text-dark: #4a4543; 
-            --rose-accent: #d36e53;
-            --border-color: #e6dfd5;
+            --border-color: #e2ded8;
+            --rose-accent: #c45d44;
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+
         body { 
-            font-family: 'Jost', 'Helvetica Neue', Arial, sans-serif; 
-            background-color: #fbf9f6; 
+            font-family: 'Jost', sans-serif; 
+            background-color: #faf8f5; 
             color: var(--text-dark); 
             margin: 0; 
-            line-height: 1.7; 
+            line-height: 1.6; 
         }
 
         .container { 
@@ -46,6 +48,7 @@
             top: 0; 
             z-index: 1000; 
             border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .header-content { 
@@ -57,7 +60,7 @@
 
         .logo h1 { 
             margin: 0; 
-            font-size: 1.6rem; 
+            font-size: 1.7rem; 
             color: var(--secondary-color); 
             font-family: 'Playfair Display', Georgia, serif; 
             letter-spacing: 1px;
@@ -65,286 +68,116 @@
 
         nav ul { 
             display: flex; 
-            gap: 25px; 
+            gap: 20px; 
             list-style: none; 
             margin: 0; 
             padding: 0; 
+            flex-wrap: wrap;
         }
 
         nav a { 
             text-decoration: none; 
             color: var(--text-dark); 
-            font-weight: 400; 
-            font-size: 0.95rem; 
+            font-weight: 500; 
+            font-size: 0.9rem; 
             letter-spacing: 0.5px;
             transition: color 0.2s;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
+        nav a:hover { color: var(--primary-color); }
+
+        /* Détails du Bouquet */
+        .product-detail-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
-        /* Fil d' Ariane & Introduction douce */
-        .breadcrumb {
-            margin: 30px 0 15px 0;
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
-        .breadcrumb a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+        @media (max-width: 768px) {
+            .product-grid { grid-template-columns: 1fr; }
         }
 
-        /* Fiche Produit Principale */
-        .product-page { 
-            margin: 10px 0 60px 0; 
-            display: grid; 
-            grid-template-columns: 1.1fr 0.9fr; 
-            gap: 50px; 
-            background: white; 
-            padding: 40px; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 25px rgba(0,0,0,0.03); 
+        .product-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
         }
 
-        @media (max-width: 900px) {
-            .product-page { grid-template-columns: 1fr; padding: 20px; }
-        }
-
-        /* Galerie Épurée */
-        .product-gallery { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px; 
-        }
-
-        .main-image img { 
-            width: 100%; 
-            height: 480px; 
-            object-fit: cover; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-            transition: opacity 0.3s ease; 
-        }
-
-        .image-description-box {
-            background: var(--primary-light);
-            padding: 12px 18px;
-            border-radius: 4px;
-            font-size: 0.92rem;
-            color: var(--secondary-color);
-            text-align: center;
-            border-left: 3px solid var(--primary-color);
-            font-weight: 300;
-        }
-
-        .thumbnails { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 12px; 
-        }
-
-        .thumb { 
-            width: 100%; 
-            height: 75px; 
-            object-fit: cover; 
-            border-radius: 4px; 
-            cursor: pointer; 
-            border: 1px solid transparent; 
-            transition: all 0.2s ease; 
-            opacity: 0.6; 
-        }
-
-        .thumb:hover, .thumb.active { 
-            border-color: var(--primary-color); 
-            opacity: 1; 
-        }
-
-        /* Infos & Typographie */
-        .product-info h1 { 
-            color: var(--secondary-color); 
-            font-family: 'Playfair Display', Georgia, serif; 
-            margin-top: 0; 
-            font-size: 2.4rem;
-            font-weight: normal;
-        }
-
-        .product-subtitle {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 25px;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .price-display { 
-            font-size: 2rem; 
-            font-weight: 300; 
-            color: var(--secondary-color); 
-            margin: 20px 0; 
+        .product-info h2 {
             font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.3rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
         }
 
-        .section-label { 
-            font-size: 0.85rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            color: #888; 
-            display: block; 
-            margin-bottom: 12px; 
-            font-weight: 600;
+        .product-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--rose-accent);
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .size-selector { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr;
-            gap: 10px; 
-            margin-bottom: 30px; 
+        .product-info p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
-        .size-btn { 
-            padding: 12px 15px; 
-            border: 1px solid var(--border-color); 
-            background: white; 
-            border-radius: 4px; 
-            cursor: pointer; 
-            font-weight: 400; 
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            transition: all 0.2s ease; 
-            text-align: center;
-        }
-
-        .size-btn.active, .size-btn:hover { 
-            background-color: var(--secondary-color); 
-            color: white; 
-            border-color: var(--secondary-color); 
-        }
-
-        /* Caractéristiques épurées */
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 35px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-        }
-
-        .features-list li {
-            margin-bottom: 12px;
-            font-size: 0.92rem;
-            color: var(--text-dark);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .features-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .features-list li i {
-            color: var(--primary-color);
-            margin-top: 4px;
-        }
-
-        /* Boutons d'action chics */
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn-action { 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 12px; 
-            padding: 15px 25px; 
-            border-radius: 4px; 
-            color: white; 
-            text-decoration: none; 
-            font-weight: 500; 
-            font-size: 0.95rem; 
-            letter-spacing: 0.5px;
+        .btn-order {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 500;
             transition: background 0.2s;
         }
 
-        .btn-whatsapp { background-color: #2d6a4f; }
-        .btn-whatsapp:hover { background-color: #1b4332; }
-
-        .btn-call { background-color: var(--secondary-color); }
-        .btn-call:hover { background-color: #000; }
-
-        /* Lightbox */
-        .lightbox-modal { 
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(20, 20, 20, 0.9); 
-            justify-content: center; 
-            align-items: center; 
-            cursor: zoom-out; 
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .lightbox-modal img { 
-            max-width: 80%; 
-            max-height: 75%; 
-            border-radius: 4px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .lightbox-caption {
-            color: #f4efea;
-            font-size: 1.05rem;
-            font-family: 'Playfair Display', Georgia, serif;
-            letter-spacing: 0.5px;
-        }
+        .btn-order:hover { background-color: var(--primary-color); }
 
         footer { 
             background: var(--secondary-color); 
             color: #999; 
-            padding: 50px 0; 
-            margin-top: 80px; 
+            padding: 40px 0; 
             text-align: center; 
             font-size: 0.85rem; 
             letter-spacing: 0.5px;
         }
-
-        footer h4 {
-            color: white;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
+        footer h4 { color: white; font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: normal; }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        ✨ Création florale artisanale préparée avec passion par Brigitte
-    </div>
+    <div class="top-bar">✨ Votre artisan fleuriste — Livraison et retraits en boutique</div>
 
     <header>
         <div class="container header-content">
             <div class="logo"><h1>Au Nom de la Rose</h1></div>
             <nav>
                 <ul>
-                    <li><a href="index.html#accueil">Accueil</a></li>
-                    <li><a href="index.html#bouquets">Nos Bouquets</a></li>
-                    <li><a href="index.html#prestations">Prestations</a></li>
-                    <li><a href="index.html#histoire">Notre Histoire</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bouquet-tendresse.html">Nos Bouquets</a></li>
+                    <li><a href="abonnement-floraux.html">Abonnements</a></li>
+                    <li><a href="livraison-domicile.html">Livraison</a></li>
+                    <li><a href="mariages-evenements.html">Événements</a></li>
+                    <li><a href="index.html#commander">Commander</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -352,108 +185,29 @@
     </header>
 
     <main class="container">
-        <div class="breadcrumb">
-            <a href="index.html#bouquets"><i class="fa-solid fa-arrow-left"></i> Retour à la collection</a>
-        </div>
-
-        <div class="product-page">
-            <!-- Galerie Photos -->
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Bouquet Tendresse" id="current-img" onclick="openLightbox(this)">
+        <section class="product-detail-section">
+            <div class="product-grid">
+                <div class="product-image">
+                    <img src="images/Bouquet%20Tendresse%206.jpeg" alt="Bouquet Tendresse">
                 </div>
-                
-                <div class="image-description-box" id="img-desc">
-                    Vue 1 : Allée d'honneur majestueuse décorée pour célébrer l'amour et l'élégance florale.
-                </div>
-
-                <div class="thumbnails">
-                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Vue 1" class="thumb active" onclick="changeImage(this, 'Vue 1 : Allée d\'honneur majestueuse décorée pour célébrer l\'amour et l\'élégance florale.')">
-                    <img src="images/Bouquet Tendresse 2.jpeg" alt="Vue 2" class="thumb" onclick="changeImage(this, 'Vue 2 : Table de réception raffinée, sublimée par la douceur de nos arrangements.')">
-                    <img src="images/Bouquet Tendresse 3.jpeg" alt="Vue 3" class="thumb" onclick="changeImage(this, 'Vue 3 : Éclat chaleureux de tulipes et de roses sélectionnées avec soin par Brigitte.')">
-                    <img src="images/Bouquet Tendresse 4.jpeg" alt="Vue 4" class="thumb" onclick="changeImage(this, 'Vue 4 : Mur végétal luxuriant, une touche de nature vivante et passionnée.')">
-                    <img src="images/Bouquet Tendresse 5.jpeg" alt="Vue 5" class="thumb" onclick="changeImage(this, 'Vue 5 : Gros plan sur la fraîcheur éclatante des pétales baignés de lumière.')">
-                    <img src="images/Bouquet Tendresse 6.jpeg" alt="Vue 6" class="thumb" onclick="changeImage(this, 'Vue 6 : Harmonie subtile des couleurs pastel pour envelopper vos moments de tendresse.')">
-                    <img src="images/Bouquet Tendresse 7.jpeg" alt="Vue 7" class="thumb" onclick="changeImage(this, 'Vue 7 : Décoration florale extérieure pensée pour créer des souvenirs inoubliables.')">
-                    <img src="images/Bouquet Tendresse 8.jpeg" alt="Vue 8" class="thumb" onclick="changeImage(this, 'Vue 8 : Mise en scène grand format pour les mariages et réceptions d\'exception.')">
+                <div class="product-info">
+                    <h2>Bouquet Tendresse</h2>
+                    <div class="product-price">À partir de 25 €</div>
+                    <p>Douceur pastel de pivoines, roses délicates et eucalyptus frais, assemblés avec soin pour exprimer votre affection avec beaucoup de raffinement et de délicatesse.</p>
+                    <p>Chaque composition est préparée à la main dans notre atelier floral à La Boixe afin de garantir une fraîcheur et une élégance irréprochables.</p>
+                    <a href="index.html#commander" class="btn-order">Commander ce bouquet</a>
                 </div>
             </div>
-
-            <!-- Informations Produit -->
-            <div class="product-info">
-                <h1>Bouquet Tendresse</h1>
-                <p class="product-subtitle">Douceur pastel de pivoines, roses délicates et eucalyptus frais. Une composition poétique et chaleureuse façonnée à la main pour exprimer toute votre affection.</p>
-
-                <div class="price-display" id="price-tag">25 €</div>
-
-                <span class="section-label">Choisissez votre format :</span>
-                <div class="size-selector">
-                    <button class="size-btn active" onclick="selectSize('25 €', 'Format Découverte (25 €)', this)">Format Découverte (25 €)</button>
-                    <button class="size-btn" onclick="selectSize('35 €', 'Taille Standard (35 €)', this)">Taille Standard (35 €)</button>
-                    <button class="size-btn" onclick="selectSize('45 €', 'Taille Généreuse (45 €)', this)">Taille Généreuse (45 €)</button>
-                    <button class="size-btn" onclick="selectSize('65 €', 'Format Prestige (65 €)', this)">Format Prestige (65 €)</button>
-                </div>
-
-                <ul class="features-list">
-                    <li><i class="fa-solid fa-leaf"></i> <div><strong>Composition :</strong> Roses pastel, pivoines de saison, œillets fins & eucalyptus frais.</div></li>
-                    <li><i class="fa-solid fa-truck"></i> <div><strong>Livraison :</strong> Soignée et rapide à domicile ou sur le lieu de l'événement.</div></li>
-                    <li><i class="fa-solid fa-heart"></i> <div><strong>Fraîcheur garantie :</strong> Fleurs coupées du jour par notre artisane fleuriste.</div></li>
-                </ul>
-
-                <span class="section-label">Commander ce bouquet :</span>
-                <div class="action-buttons">
-                    <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Tendresse%20(Format%20Découverte%20-%2025%20€)" class="btn-action btn-whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp fa-lg"></i> Commander via WhatsApp
-                    </a>
-                    <a href="tel:+4515221767454" class="btn-action btn-call">
-                        <i class="fa-solid fa-phone"></i> Commander par Téléphone
-                    </a>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
-
-    <!-- Modal Lightbox -->
-    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Agrandissement">
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-    </div>
 
     <footer>
         <div class="container">
             <h4>Au Nom de la Rose</h4>
-            <p>L'art de dire je t'aime par les fleurs — Création artisanale.</p>
+            <p>L'art de dire je t'aime par les fleurs — 2 Rue du Cimetière, 16330 La Boixe, France</p>
             <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">&copy; 2026 Tous droits réservés.</p>
         </div>
     </footer>
 
-    <script>
-        function changeImage(thumbElement, descText) {
-            document.getElementById('current-img').src = thumbElement.src;
-            document.querySelectorAll('.thumb').forEach(thumb => thumb.classList.remove('active'));
-            thumbElement.classList.add('active');
-            document.getElementById('img-desc').textContent = descText;
-        }
-
-        function openLightbox(imgElement) {
-            const lightbox = document.getElementById('lightbox');
-            document.getElementById('lightbox-img').src = imgElement.src;
-            document.getElementById('lightbox-caption').textContent = document.getElementById('img-desc').textContent;
-            lightbox.style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-
-        function selectSize(price, sizeName, element) {
-            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-            document.getElementById('price-tag').textContent = price;
-
-            const encodedText = encodeURIComponent(`Bonjour, je souhaite commander le Bouquet Tendresse (${sizeName})`);
-            document.getElementById('whatsapp-btn').href = `https://wa.me/4515221767454?text=${encodedText}`;
-        }
-    </script>
 </body>
 </html>
