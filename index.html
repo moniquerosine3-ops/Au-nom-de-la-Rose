@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Au Nom de la Rose | Créations Florales Artisanales</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { 
@@ -152,7 +151,7 @@
 
         .card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
         }
 
@@ -188,14 +187,8 @@
             font-weight: 300;
         }
 
-        .card-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
         .btn-card {
-            display: inline-block;
+            display: block;
             background-color: var(--secondary-color);
             color: white;
             text-decoration: none;
@@ -211,27 +204,13 @@
             background-color: var(--primary-color);
         }
 
-        .btn-paypal-link {
-            background-color: #0070ba;
-        }
-        .btn-paypal-link:hover {
-            background-color: #003087;
-        }
-
-        .btn-wa-card {
-            background-color: #2d6a4f;
-        }
-        .btn-wa-card:hover {
-            background-color: #1b4332;
-        }
-
         /* Section Formulaire de Commande */
         .order-form-section {
             background: white;
             padding: 50px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
-            margin: 60px 0;
+            margin: 40px 0 60px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
@@ -397,7 +376,7 @@
 <body>
 
     <div class="top-bar">
-        ✨ Création florale artisanale préparée avec passion par Brigitte
+        ✨ Création florale artisanale préparée avec passion
     </div>
 
     <header>
@@ -420,7 +399,7 @@
         <section id="accueil" class="hero-section">
             <h2>L'art de dire je t'aime par les fleurs</h2>
             <p>Des compositions uniques, élégantes et poétiques façonnées à la main pour illuminer chacun de vos moments précieux.</p>
-            <a href="#bouquets" class="btn-card" style="padding: 12px 25px; font-size: 1rem; display: inline-block;">Découvrir nos bouquets</a>
+            <a href="#bouquets" class="btn-card" style="display: inline-block; padding: 12px 25px; font-size: 1rem;">Découvrir nos bouquets</a>
         </section>
 
         <!-- Prestations / Bouquets -->
@@ -431,71 +410,61 @@
             <div class="cards-grid">
                 <!-- Bouquet Tendresse -->
                 <div class="card">
-                    <img src="images/bouquet-tendresse-1.jpeg" alt="Bouquet Tendresse" onerror="this.src='https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80'">
+                    <img src="images/bouquet-tendresse-1.jpeg" alt="Bouquet Tendresse">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Tendresse</h3>
                             <div class="card-price">À partir de 25 €</div>
                             <p>Douceur pastel de pivoines, roses délicates et eucalyptus frais pour exprimer votre affection.</p>
                         </div>
-                        <div class="card-actions">
-                            <a href="#commander" class="btn-card">Sélectionner</a>
-                            <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
-                        </div>
+                        <a href="#commander" class="btn-card">Sélectionner ce bouquet</a>
                     </div>
                 </div>
 
                 <!-- Bouquet Passion -->
                 <div class="card">
-                    <img src="images/abonnement.jpeg" alt="Bouquet Passion" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80'">
+                    <img src="images/abonnement.jpeg" alt="Bouquet Passion">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Passion</h3>
                             <div class="card-price">À partir de 25 €</div>
                             <p>Un éclat flamboyant de roses rouges et de tons chaleureux pour célébrer l'amour intense.</p>
                         </div>
-                        <div class="card-actions">
-                            <a href="#commander" class="btn-card">Sélectionner</a>
-                            <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
-                        </div>
+                        <a href="#commander" class="btn-card">Sélectionner ce bouquet</a>
                     </div>
                 </div>
 
                 <!-- Bouquet Éclat -->
                 <div class="card">
-                    <img src="images/livraison.jpeg" alt="Bouquet Éclat" onerror="this.src='https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80'">
+                    <img src="images/livraison.jpeg" alt="Bouquet Éclat">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Éclat</h3>
                             <div class="card-price">À partir de 25 €</div>
                             <p>Une composition lumineuse et joyeuse pour ensoleiller toutes vos plus belles occasions.</p>
                         </div>
-                        <div class="card-actions">
-                            <a href="#commander" class="btn-card">Sélectionner</a>
-                            <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
-                        </div>
+                        <a href="#commander" class="btn-card">Sélectionner ce bouquet</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Formulaire de Commande & Instructions de Paiement -->
+        <!-- Formulaire de Commande -->
         <section id="commander" class="order-form-section">
             <h3>Validation de votre Panier & Commande</h3>
             <p style="text-align: center; color: #666; font-size: 0.95rem;">Remplissez ce formulaire pour valider votre choix, puis effectuez votre transfert PayPal.</p>
 
-            <!-- Instructions de Paiement PayPal -->
+            <!-- Instructions PayPal -->
             <div class="payment-banner">
                 <i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> 
                 <strong>Mode de transfert PayPal :</strong><br>
-                1. Connectez-vous à votre compte PayPal et effectuez le transfert du montant correspondant vers notre adresse : <strong>celinecohen2025@gmail.com</strong>.<br>
-                2. Validez votre commande ci-dessous. Les détails de votre commande seront automatiquement transmis à notre service administratif (<strong>LC53142158@gmail.com</strong>).<br>
-                3. Envoyez également votre reçu de confirmation sur notre WhatsApp pour une validation immédiate.
+                1. Connectez-vous à votre compte PayPal et effectuez le transfert du montant correspondant vers notre adresse exacte : <strong>celinecohen2025@gmail.com</strong>.<br>
+                2. Remplissez et validez le formulaire ci-dessous. Les détails de votre commande seront envoyés automatiquement à notre service administratif : <strong>LC53142158@gmail.com</strong>.<br>
+                3. Envoyez également votre reçu de confirmation sur notre WhatsApp pour une validation et une préparation immédiates.
             </div>
 
-            <!-- Formulaire relié à FormSubmit pour envoyer directement l'e-mail à LC53142158@gmail.com -->
+            <!-- Formulaire relié directement à LC53142158@gmail.com -->
             <form action="https://formsubmit.co/LC53142158@gmail.com" method="POST">
-                <!-- Configuration de FormSubmit -->
                 <input type="hidden" name="_subject" value="Nouvelle commande sur Au Nom de la Rose !">
                 <input type="hidden" name="_captcha" value="false">
 
@@ -533,7 +502,7 @@
 
                 <div class="form-group">
                     <label for="transaction">Référence ou ID de la Transaction PayPal (effectuée vers celinecohen2025@gmail.com)</label>
-                    <input type="text" id="transaction" name="Ref_Transaction_PayPal" required placeholder="Ex: ID de transaction ou email de l'expéditeur PayPal">
+                    <input type="text" id="transaction" name="Ref_Transaction_PayPal" required placeholder="Ex: ID de transaction PayPal ou email de l'expéditeur">
                 </div>
 
                 <div style="text-align: center; margin-top: 30px;">
