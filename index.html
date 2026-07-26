@@ -130,21 +130,6 @@
             font-weight: 300;
         }
 
-        .payment-instructions {
-            background: var(--primary-light);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--primary-color);
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 40px;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        .payment-instructions strong {
-            color: var(--secondary-color);
-        }
-
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -238,6 +223,89 @@
         }
         .btn-wa-card:hover {
             background-color: #1b4332;
+        }
+
+        /* Section Formulaire de Commande */
+        .order-form-section {
+            background: white;
+            padding: 50px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin: 60px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .order-form-section h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .payment-banner {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 25px 0;
+            font-size: 0.95rem;
+        }
+
+        .payment-banner strong {
+            color: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #fbf9f6;
+            box-sizing: border-box;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-color);
         }
 
         /* Section Contact & Horaires */
@@ -339,8 +407,7 @@
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#bouquets">Nos Bouquets</a></li>
-                    <li><a href="#prestations">Prestations</a></li>
-                    <li><a href="#histoire">Notre Histoire</a></li>
+                    <li><a href="#commander">Commander</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -361,11 +428,6 @@
             <h2 class="section-title">Nos Bouquets & Compositions</h2>
             <p class="section-subtitle">Commandez en toute simplicité (Formats de 25 € à 65 €)</p>
 
-            <div class="payment-instructions">
-                <i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> 
-                <strong>Modalité de commande :</strong> Cliquez sur le bouton bleu pour accéder à l'interface de transfert PayPal vers <strong>celinecohen2025@gmail.com</strong>, puis envoyez votre reçu de confirmation sur notre WhatsApp.
-            </div>
-
             <div class="cards-grid">
                 <!-- Bouquet Tendresse -->
                 <div class="card">
@@ -377,12 +439,7 @@
                             <p>Douceur pastel de pivoines, roses délicates et eucalyptus frais pour exprimer votre affection.</p>
                         </div>
                         <div class="card-actions">
-                            <a href="https://www.paypal.com/myaccount/transfer/" class="btn-card btn-paypal-link" target="_blank">
-                                <i class="fa-brands fa-paypal"></i> Transférer sur : celinecohen2025@gmail.com
-                            </a>
-                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal%20vers%20celinecohen2025@gmail.com%20pour%20le%20Bouquet%20Tendresse." class="btn-card btn-wa-card" target="_blank">
-                                <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
-                            </a>
+                            <a href="#commander" class="btn-card">Sélectionner</a>
                             <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
                         </div>
                     </div>
@@ -398,12 +455,7 @@
                             <p>Un éclat flamboyant de roses rouges et de tons chaleureux pour célébrer l'amour intense.</p>
                         </div>
                         <div class="card-actions">
-                            <a href="https://www.paypal.com/myaccount/transfer/" class="btn-card btn-paypal-link" target="_blank">
-                                <i class="fa-brands fa-paypal"></i> Transférer sur : celinecohen2025@gmail.com
-                            </a>
-                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal%20vers%20celinecohen2025@gmail.com%20pour%20le%20Bouquet%20Passion." class="btn-card btn-wa-card" target="_blank">
-                                <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
-                            </a>
+                            <a href="#commander" class="btn-card">Sélectionner</a>
                             <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
                         </div>
                     </div>
@@ -419,12 +471,7 @@
                             <p>Une composition lumineuse et joyeuse pour ensoleiller toutes vos plus belles occasions.</p>
                         </div>
                         <div class="card-actions">
-                            <a href="https://www.paypal.com/myaccount/transfer/" class="btn-card btn-paypal-link" target="_blank">
-                                <i class="fa-brands fa-paypal"></i> Transférer sur : celinecohen2025@gmail.com
-                            </a>
-                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal%20vers%20celinecohen2025@gmail.com%20pour%20le%20Bouquet%20Eclat." class="btn-card btn-wa-card" target="_blank">
-                                <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
-                            </a>
+                            <a href="#commander" class="btn-card">Sélectionner</a>
                             <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
                         </div>
                     </div>
@@ -432,9 +479,72 @@
             </div>
         </section>
 
+        <!-- Formulaire de Commande & Instructions de Paiement -->
+        <section id="commander" class="order-form-section">
+            <h3>Validation de votre Panier & Commande</h3>
+            <p style="text-align: center; color: #666; font-size: 0.95rem;">Remplissez ce formulaire pour valider votre choix, puis effectuez votre transfert PayPal.</p>
+
+            <!-- Instructions de Paiement PayPal -->
+            <div class="payment-banner">
+                <i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> 
+                <strong>Mode de transfert PayPal :</strong><br>
+                1. Connectez-vous à votre compte PayPal et effectuez le transfert du montant correspondant vers notre adresse : <strong>celinecohen2025@gmail.com</strong>.<br>
+                2. Validez votre commande ci-dessous. Les détails de votre commande seront automatiquement transmis à notre service administratif (<strong>LC53142158@gmail.com</strong>).<br>
+                3. Envoyez également votre reçu de confirmation sur notre WhatsApp pour une validation immédiate.
+            </div>
+
+            <!-- Formulaire relié à FormSubmit pour envoyer directement l'e-mail à LC53142158@gmail.com -->
+            <form action="https://formsubmit.co/LC53142158@gmail.com" method="POST">
+                <!-- Configuration de FormSubmit -->
+                <input type="hidden" name="_subject" value="Nouvelle commande sur Au Nom de la Rose !">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom et Prénom</label>
+                        <input type="text" id="nom" name="Nom" required placeholder="Votre nom complet">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Numéro de Téléphone (WhatsApp)</label>
+                        <input type="tel" id="telephone" name="Telephone" required placeholder="+33 6 ...">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Votre Adresse Email</label>
+                        <input type="email" id="email" name="Email_Client" required placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="bouquet">Choix du Bouquet</label>
+                        <select id="bouquet" name="Bouquet_Choisi" required>
+                            <option value="">-- Sélectionnez un bouquet --</option>
+                            <option value="Bouquet Tendresse (25€+)">Bouquet Tendresse (À partir de 25 €)</option>
+                            <option value="Bouquet Passion (25€+)">Bouquet Passion (À partir de 25 €)</option>
+                            <option value="Bouquet Éclat (25€+)">Bouquet Éclat (À partir de 25 €)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adresse">Adresse de Livraison</label>
+                    <textarea id="adresse" name="Adresse_Livraison" rows="3" required placeholder="Indiquez l'adresse complète de livraison..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="transaction">Référence ou ID de la Transaction PayPal (effectuée vers celinecohen2025@gmail.com)</label>
+                    <input type="text" id="transaction" name="Ref_Transaction_PayPal" required placeholder="Ex: ID de transaction ou email de l'expéditeur PayPal">
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-submit">Valider ma commande et envoyer les détails</button>
+                </div>
+            </form>
+        </section>
+
         <!-- Section Contact & Horaires -->
         <section id="contact" class="contact-section">
-            <h3>Contactez-nous & Commandez</h3>
+            <h3>Contactez-nous</h3>
             <p style="color: #666; font-size: 0.95rem; font-weight: 300;">Notre équipe est disponible pour répondre à vos questions et préparer vos commandes.</p>
 
             <div class="hours-box">
@@ -447,11 +557,11 @@
                 <a href="tel:+4515221767454" class="btn-contact btn-tel">
                     <i class="fa-solid fa-phone"></i> Appeler au +45 15 22 17 67 454
                 </a>
-                <a href="https://wa.me/4515221767454" class="btn-contact btn-wa" target="_blank">
+                <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal." class="btn-contact btn-wa" target="_blank">
                     <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp : +45 15 22 17 67 454
                 </a>
-                <a href="mailto:LCS3142158@gmail.com" class="btn-contact btn-mail">
-                    <i class="fa-regular fa-envelope"></i> LCS3142158@gmail.com
+                <a href="mailto:LC53142158@gmail.com" class="btn-contact btn-mail">
+                    <i class="fa-regular fa-envelope"></i> LC53142158@gmail.com
                 </a>
             </div>
         </section>
