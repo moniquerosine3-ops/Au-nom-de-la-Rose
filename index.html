@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Au Nom de la Rose | Fleuriste & Créations Florales</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --primary-color: #d4a373;
@@ -52,11 +51,12 @@
         .hero {
             text-align: center;
             padding: 80px 20px;
-            background: linear-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.02));
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
             font-family: serif;
@@ -67,6 +67,7 @@
             color: #666;
             max-width: 600px;
             margin: 0 auto 30px auto;
+            line-height: 1.5;
         }
 
         .btn-main {
@@ -99,6 +100,7 @@
         .artisane-photos {
             display: flex;
             gap: 15px;
+            flex-shrink: 0;
         }
 
         .artisane-photos img {
@@ -112,12 +114,15 @@
             color: var(--secondary-color);
             margin-top: 0;
             font-family: serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
         .artisane-content p {
             color: #666;
             line-height: 1.6;
             font-size: 0.95rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -127,7 +132,6 @@
         <div class="logo">Au Nom de la Rose</div>
         <nav>
             <a href="index.html">Accueil</a>
-            <!-- Le lien "Nos Bouquets" pointe directement vers le catalogue des fleurs -->
             <a href="bouquet-eclat.html">Nos Bouquets</a>
             <a href="#">Abonnements</a>
             <a href="#">Livraison</a>
@@ -140,13 +144,11 @@
     <section class="hero">
         <h1>L'art de dire je t'aime par les fleurs</h1>
         <p>Des compositions uniques, élégantes et poétiques façonnées à la main pour illuminer chacun de vos moments précieux.</p>
-        <!-- Le bouton mène également au catalogue -->
         <a href="bouquet-eclat.html" class="btn-main">Découvrir nos bouquets</a>
     </section>
 
     <section class="artisane-section">
         <div class="artisane-photos">
-            <!-- Photos de Brigitte (qui restent uniquement sur la page d'accueil) -->
             <img src="brigitte1.jpeg" alt="Brigitte artisan fleuriste">
             <img src="brigitte2.jpeg" alt="Brigitte artisan fleuriste">
         </div>
