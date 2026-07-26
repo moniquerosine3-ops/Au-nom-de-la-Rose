@@ -3,258 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Au Nom de la Rose | Fleuriste Artisanal & Créateur Floral</title>
+    <title>Au Nom de la Rose | Créations Florales Artisanales</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #d4a373;
-            --secondary-color: #2b2b2b;
-            --accent-color: #5d3587;
-            --bg-light: #fdfbf7;
-            --text-dark: #333333;
+        :root { 
+            --primary-color: #c98b68; 
+            --primary-light: #f7f3ed;
+            --secondary-color: #2c2a29; 
+            --text-dark: #4a4543; 
+            --border-color: #e6dfd5;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafafa;
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        body { 
+            font-family: 'Jost', 'Helvetica Neue', Arial, sans-serif; 
+            background-color: #fbf9f6; 
+            color: var(--text-dark); 
+            margin: 0; 
+            line-height: 1.7; 
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
         }
 
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .top-bar { 
+            background-color: var(--secondary-color); 
+            color: #f4efea; 
+            text-align: center; 
+            padding: 10px; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* Header & Nav */
-        header {
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        header { 
+            background: white; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 0; 
         }
 
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            font-family: Georgia, serif;
+        .logo h1 { 
+            margin: 0; 
+            font-size: 1.6rem; 
+            color: var(--secondary-color); 
+            font-family: 'Playfair Display', Georgia, serif; 
+            letter-spacing: 1px;
         }
 
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        nav ul { 
+            display: flex; 
+            gap: 25px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 400; 
+            font-size: 0.95rem; 
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
         }
 
         nav a:hover {
             color: var(--primary-color);
         }
 
-        /* Hero Banner */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Bouquet 1.jpeg') center/cover;
-            height: 55vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Section Hero / Accueil */
+        .hero-section {
+            padding: 60px 0;
             text-align: center;
-            color: white;
-            padding: 0 20px;
+            background: white;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .hero h2 {
-            font-size: 3rem;
+        .hero-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
             margin-bottom: 15px;
-            font-family: Georgia, serif;
+            font-weight: normal;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
+        /* Grille des Prestations */
+        .prestations-section {
+            padding: 60px 0;
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #bc8a5f;
-        }
-
-        /* Section Titles */
-        .section-header {
+        .section-title {
             text-align: center;
-            margin: 50px 0 30px;
-        }
-
-        .section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 2rem;
             color: var(--secondary-color);
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-weight: normal;
         }
 
-        .section-header p {
-            color: #777;
-            margin: 0;
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
-        /* Grids & Cards */
-        .grid-3 {
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .cards-grid { grid-template-columns: 1fr; }
         }
 
         .card {
             background: white;
-            border-radius: 10px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             display: flex;
             flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
         .card img {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
-            cursor: pointer;
         }
 
-        .card-body {
-            padding: 20px;
+        .card-content {
+            padding: 25px;
+            text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card-title {
-            font-size: 1.2rem;
-            color: var(--accent-color);
+        .card-content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
             margin-top: 0;
             margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .btn-card {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
             text-decoration: none;
-            font-weight: bold;
-            display: block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
         }
 
-        .card-title:hover {
-            color: var(--primary-color);
+        .btn-card:hover {
+            background-color: var(--secondary-color);
         }
 
-        .card-price {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 10px 0;
-        }
-
-        /* Banner Engagements */
-        .features {
-            background: var(--bg-light);
-            padding: 40px 0;
-            margin-top: 50px;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .features-grid {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
+        /* Section Contact & Horaires Mis à jour */
+        .contact-section {
+            background: white;
+            padding: 50px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin: 60px 0;
             text-align: center;
         }
 
-        .feature-item {
-            flex: 1;
-            min-width: 220px;
-        }
-
-        .feature-item i {
-            font-size: 2.2rem;
-            color: var(--primary-color);
+        .contact-section h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 0;
             margin-bottom: 10px;
         }
 
-        /* Galerie Brigitte */
-        .brigitte-gallery {
-            display: flex;
-            gap: 15px;
-            flex: 1;
-            min-width: 300px;
+        .hours-box {
+            background: var(--primary-light);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            margin: 20px 0 30px 0;
+            border-left: 3px solid var(--primary-color);
+            text-align: left;
         }
 
-        .brigitte-gallery img {
-            width: 50%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            cursor: pointer;
-            transition: transform 0.2s ease;
+        .hours-box h4 {
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
         }
 
-        .brigitte-gallery img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Contact Box */
-        .contact-box {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin: 50px 0;
+        .hours-box p {
+            margin: 4px 0;
+            font-size: 0.92rem;
+            color: var(--text-dark);
         }
 
         .contact-buttons {
@@ -262,108 +242,54 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
-        .btn-action {
+        .btn-contact {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             padding: 12px 22px;
-            border-radius: 30px;
+            border-radius: 4px;
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             font-size: 0.9rem;
+            transition: opacity 0.2s;
         }
 
-        .btn-call { background-color: var(--primary-color); }
-        .btn-whatsapp { background-color: #25d366; }
-        .btn-email { background-color: #ff9f43; }
+        .btn-contact:hover { opacity: 0.9; }
+        .btn-tel { background-color: var(--secondary-color); }
+        .btn-wa { background-color: #2d6a4f; }
+        .btn-mail { background-color: var(--primary-color); }
 
-        /* Modal Lightbox */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
+        footer { 
+            background: var(--secondary-color); 
+            color: #999; 
+            padding: 50px 0; 
+            text-align: center; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.5px;
         }
 
-        .lightbox-modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-            animation: zoomIn 0.3s ease;
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            color: #ccc;
-            padding: 50px 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-grid h4 {
+        footer h4 {
             color: white;
-            margin-top: 0;
-        }
-
-        .footer-grid ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-grid li {
-            margin-bottom: 8px;
-        }
-
-        .footer-grid a {
-            color: #ccc;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            font-size: 0.85rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: normal;
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRE SUPERIEURE -->
     <div class="top-bar">
-        <i class="fa-solid fa-truck-fast"></i> Livraison rapide à domicile & créations sur-mesure préparées par Brigitte
+        ✨ Création florale artisanale préparée avec passion par Brigitte
     </div>
 
-    <!-- EN-TÊTE -->
     <header>
         <div class="container header-content">
-            <div class="logo">
-                <h1>Au Nom de la Rose</h1>
-            </div>
+            <div class="logo"><h1>Au Nom de la Rose</h1></div>
             <nav>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
@@ -376,255 +302,89 @@
         </div>
     </header>
 
-    <!-- BANNIÈRE HERO -->
-    <section id="accueil" class="hero">
-        <div>
-            <h2>L'art floral sous toutes ses formes</h2>
-            <p>Compositions artisanales, fraîches et élégantes pour tous vos moments de vie</p>
-            <a href="#bouquets" class="btn btn-primary">Découvrir nos créations</a>
-        </div>
-    </section>
-
-    <!-- SECTION ENGAGEMENTS -->
-    <div class="features">
-        <div class="container features-grid">
-            <div class="feature-item">
-                <i class="fa-solid fa-leaf"></i>
-                <h4>Fleurs Fraîches</h4>
-                <p style="font-size: 0.85rem; color: #666;">Arrivages quotidiens rigoureusement sélectionnés</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <h4>Savoir-faire Artisanal</h4>
-                <p style="font-size: 0.85rem; color: #666;">Créations uniques réalisées à la hand</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-truck-ramp-box"></i>
-                <h4>Livraison Soignée</h4>
-                <p style="font-size: 0.85rem; color: #666;">Acheminement rapide à domicile ou sur lieu d'événement</p>
-            </div>
-        </div>
-    </div>
-
     <main class="container">
-
-        <!-- RUBRIQUE L'ATELIER DE BRIGITTE -->
-        <section id="histoire" style="margin-top: 50px;">
-            <div style="background: white; border-radius: 12px; padding: 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                
-                <div class="brigitte-gallery">
-                    <img src="images/brigitte.jpg" alt="Brigitte - Photo 1" class="zoomable-img">
-                    <img src="images/Brigitte.jpg" alt="Brigitte - Photo 2" class="zoomable-img">
-                </div>
-
-                <div style="flex: 1; min-width: 280px;">
-                    <h2 style="color: var(--secondary-color); margin-top: 0;">L'Atelier de Brigitte</h2>
-                    <p style="color: #555;">Bienvenue chez <strong>Au Nom de la Rose</strong> ! Passionnée par le monde végétal et l'élégance florale, Brigitte met tout son savoir-faire artisanal à votre service pour créer des compositions uniques.</p>
-                    <p style="color: #555;">Chaque fleur est sélectionnée avec rigueur pour composer des bouquets durables, harmonieux et sur-mesure qui subliment tous les événements de votre vie.</p>
-                </div>
-            </div>
+        
+        <!-- Hero Section -->
+        <section id="accueil" class="hero-section">
+            <h2>L'art de dire je t'aime par les fleurs</h2>
+            <p>Des compositions uniques, élégantes et poétiques façonnées à la main pour illuminer chacun de vos moments précieux.</p>
+            <a href="#bouquets" class="btn-card">Découvrir nos bouquets</a>
         </section>
 
-        <!-- RUBRIQUE NOS BOUQUETS -->
-        <section id="bouquets">
-            <div class="section-header">
-                <h2>Nos Bouquets & Collections</h2>
-                <p>Parcourez nos déclinaisons florales adaptées à vos envies et budgets</p>
-            </div>
+        <!-- Prestations / Bouquets -->
+        <section id="bouquets" class="prestations-section">
+            <h2 class="section-title">Nos Prestations Sur-Mesure</h2>
+            <p class="section-subtitle">Un accompagnement floral personnalisé pour chaque occasion</p>
 
-            <div class="grid-3">
-                <!-- Bouquet 1 -->
+            <div class="cards-grid">
                 <div class="card">
-                    <a href="bouquet-passion.html">
-                        <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion">
-                    </a>
-                    <div class="card-body">
+                    <img src="images/bouquet-tendresse-1.jpeg" alt="Mariages & Événements">
+                    <div class="card-content">
                         <div>
-                            <a href="bouquet-passion.html" class="card-title">Bouquet Passion</a>
-                            <p style="font-size: 0.9rem; color: #666;">Harmonie intense de roses, œillets et orchidées premium.</p>
+                            <h3>Mariages & Événements</h3>
+                            <p>Décors sur mesure pour votre grand jour : arches, centres de table et bouquets de mariée.</p>
                         </div>
-                        <div>
-                            <div class="card-price">De 26 € à 93 €</div>
-                            <a href="bouquet-passion.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box;">Voir la gamme</a>
-                        </div>
+                        <a href="bouquet-tendresse.html" class="btn-card">En savoir plus</a>
                     </div>
                 </div>
 
-                <!-- Bouquet 2 -->
                 <div class="card">
-                    <a href="bouquet-tendresse.html">
-                        <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse">
-                    </a>
-                    <div class="card-body">
+                    <img src="images/abonnement.jpeg" alt="Abonnements Floraux">
+                    <div class="card-content">
                         <div>
-                            <a href="bouquet-tendresse.html" class="card-title">Bouquet Tendresse</a>
-                            <p style="font-size: 0.9rem; color: #666;">Douceur pastel de pivoines, roses délicates et eucalyptus.</p>
+                            <h3>Abonnements Floraux</h3>
+                            <p>Remplissez vos espaces régulièrement (entreprises, hôtels, restaurants ou résidences).</p>
                         </div>
-                        <div>
-                            <div class="card-price">À partir de 32 €</div>
-                            <a href="bouquet-tendresse.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box;">Voir la gamme</a>
-                        </div>
+                        <a href="bouquet-tendresse.html" class="btn-card">En savoir plus</a>
                     </div>
                 </div>
 
-                <!-- Bouquet 3 -->
                 <div class="card">
-                    <a href="bouquet-eclat.html">
-                        <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat">
-                    </a>
-                    <div class="card-body">
+                    <img src="images/livraison.jpeg" alt="Livraison à domicile">
+                    <div class="card-content">
                         <div>
-                            <a href="bouquet-eclat.html" class="card-title">Bouquet Éclat</a>
-                            <p style="font-size: 0.9rem; color: #666;">Composition ensoleillée et vibrante aux tons chauds.</p>
+                            <h3>Livraison à domicile</h3>
+                            <p>Vos fleurs fraîches livrées avec soin directement entre les mains de leurs destinataires.</p>
                         </div>
-                        <div>
-                            <div class="card-price">À partir de 29 €</div>
-                            <a href="bouquet-eclat.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box;">Voir la gamme</a>
-                        </div>
+                        <a href="bouquet-tendresse.html" class="btn-card">En savoir plus</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RUBRIQUE NOS PRESTATIONS -->
-        <section id="prestations">
-            <div class="section-header">
-                <h2>Nos Prestations Sur-Mesure</h2>
-                <p>Un accompagnement floral personnalisé pour chaque occasion</p>
+        <!-- Section Contact & Horaires Mis à jour -->
+        <section id="contact" class="contact-section">
+            <h3>Contactez-nous & Commandez</h3>
+            <p style="color: #666; font-size: 0.95rem; font-weight: 300;">Notre équipe est disponible pour répondre à vos questions et préparer vos commandes.</p>
+
+            <div class="hours-box">
+                <h4><i class="fa-regular fa-clock"></i> Horaires d'Ouverture</h4>
+                <p><strong>Lundi au samedi :</strong> 09h00 – 18h30</p>
+                <p><strong>Dimanche :</strong> Fermé</p>
             </div>
 
-            <div class="grid-3">
-                <!-- Prestation 1 -->
-                <div class="card">
-                    <a href="mariages-evenements.html">
-                        <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <a href="mariages-evenements.html" class="card-title">Mariages & Événements</a>
-                            <p style="font-size: 0.9rem; color: #666;">Décors sur mesure pour votre grand jour : arches, centres de table et bouquets de mariée.</p>
-                        </div>
-                        <div>
-                            <a href="mariages-evenements.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box; margin-top: 15px;">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Prestation 2 -->
-                <div class="card">
-                    <a href="abonnements-floraux.html">
-                        <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <a href="abonnements-floraux.html" class="card-title">Abonnements Floraux</a>
-                            <p style="font-size: 0.9rem; color: #666;">Fleurissez vos espaces régulièrement (entreprises, hôtels, restaurants ou résidences).</p>
-                        </div>
-                        <div>
-                            <a href="abonnements-floraux.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box; margin-top: 15px;">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Prestation 3 -->
-                <div class="card">
-                    <a href="livraison-domicile.html">
-                        <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <a href="livraison-domicile.html" class="card-title">Livraison à domicile</a>
-                            <p style="font-size: 0.9rem; color: #666;">Vos fleurs fraîches livrées avec soin directement entre les mains de leurs destinataires.</p>
-                        </div>
-                        <div>
-                            <a href="livraison-domicile.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box; margin-top: 15px;">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION CONTACT -->
-        <section id="contact" class="contact-box">
-            <div style="text-align: center;">
-                <h2 style="margin-top: 0; color: var(--secondary-color);">Contactez-nous & Commandez</h2>
-                <p style="color: #666; margin-bottom: 20px;">Notre équipe est disponible pour répondre à vos questions et préparer vos commandes.</p>
-
-                <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; display: inline-block; text-align: center; margin-bottom: 20px;">
-                    <p style="margin: 0; font-weight: bold; color: var(--secondary-color);"><i class="fa-regular fa-clock"></i> Nos Horaires d'Ouverture</p>
-                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #555;"><strong>Du lundi au samedi :</strong> de 9h00 à 20h00</p>
-                    <p style="margin: 2px 0 0 0; font-size: 0.9rem; color: #555;"><strong>Le dimanche :</strong> de 9h00 à 13h00</p>
-                </div>
-
-                <div class="contact-buttons">
-                    <a href="tel:+4515221767454" class="btn-action btn-call">
-                        <i class="fa-solid fa-phone"></i> Appeler au +45 1522 1767454
-                    </a>
-                    <a href="https://wa.me/4515221767454" class="btn-action btn-whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp : +45 1522 1767454
-                    </a>
-                    <a href="mailto:LC53142158@gmail.com" class="btn-action btn-email">
-                        <i class="fa-regular fa-envelope"></i> E-mail : LC53142158@gmail.com
-                    </a>
-                </div>
+            <div class="contact-buttons">
+                <a href="tel:+4515221767454" class="btn-contact btn-tel">
+                    <i class="fa-solid fa-phone"></i> Appeler au +45 15 22 17 67 454
+                </a>
+                <a href="https://wa.me/4515221767454" class="btn-contact btn-wa" target="_blank">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp : +45 15 22 17 67 454
+                </a>
+                <a href="mailto:LCS3142158@gmail.com" class="btn-contact btn-mail">
+                    <i class="fa-regular fa-envelope"></i> LCS3142158@gmail.com
+                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="lightbox-modal" onclick="this.style.display='none'">
-        <img id="lightbox-img" src="" alt="Agrandissement">
-    </div>
-
-    <!-- FOOTER -->
     <footer>
-        <div class="container footer-grid">
-            <div>
-                <h4>Au Nom de la Rose</h4>
-                <p style="font-size: 0.85rem; line-height: 1.5;">Votre artisan fleuriste créateur. Confection de bouquets uniques, décorations événementielles et abonnements floraux.</p>
-            </div>
-            <div>
-                <h4>Navigation rapide</h4>
-                <ul style="font-size: 0.85rem;">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#bouquets">Nos Bouquets</a></li>
-                    <li><a href="bouquet-passion.html">Gamme Passion</a></li>
-                    <li><a href="bouquet-tendresse.html">Gamme Tendresse</a></li>
-                    <li><a href="bouquet-eclat.html">Gamme Éclat</a></li>
-                    <li><a href="#prestations">Prestations</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Services</h4>
-                <ul style="font-size: 0.85rem;">
-                    <li><a href="livraison-domicile.html">Livraison à domicile</a></li>
-                    <li><a href="mariages-evenements.html">Mariages & Décoration</a></li>
-                    <li><a href="abonnements-floraux.html">Abonnements Entreprises</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Coordonnées</h4>
-                <p style="font-size: 0.85rem; margin: 3px 0;"><i class="fa-solid fa-phone"></i> +45 1522 1767454</p>
-                <p style="font-size: 0.85rem; margin: 3px 0;"><i class="fa-regular fa-envelope"></i> LC53142158@gmail.com</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
+        <div class="container">
+            <h4>Au Nom de la Rose</h4>
+            <p>L'art de dire je t'aime par les fleurs — Création artisanale.</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">&copy; 2026 Tous droits réservés.</p>
         </div>
     </footer>
-
-    <script>
-        document.querySelectorAll('.brigitte-gallery img').forEach(image => {
-            image.addEventListener('click', () => {
-                const lightbox = document.getElementById('lightbox');
-                const lightboxImg = document.getElementById('lightbox-img');
-                lightboxImg.src = image.src;
-                lightbox.style.display = 'flex';
-            });
-        });
-    </script>
 
 </body>
 </html>
