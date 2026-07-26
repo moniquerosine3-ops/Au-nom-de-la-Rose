@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouquet Éclat | Au Nom de la Rose</title>
+    <title>Catalogue des Fleurs | Au Nom de la Rose</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --primary-color: #d4a373;
             --secondary-color: #2b2b2b;
-            --accent-color: #5d3587;
             --bg-light: #fdfbf7;
             --text-dark: #333333;
         }
@@ -20,298 +18,257 @@
             background-color: #fafafa;
             color: var(--text-dark);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            padding: 20px;
         }
 
-        .container {
+        .catalog-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary-color);
-            color: white;
+        h1 {
             text-align: center;
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* Header & Nav */
-        header {
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8rem;
             color: var(--secondary-color);
-            font-family: Georgia, serif;
+            margin-bottom: 30px;
         }
 
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Product Detail Layout */
-        .product-page {
-            margin: 40px 0;
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .product-image img {
-            width: 100%;
+        .product-card {
+            background: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            object-fit: cover;
-            height: 450px;
-            cursor: pointer;
-        }
-
-        .product-info h1 {
-            color: var(--secondary-color);
-            font-family: Georgia, serif;
-            margin-top: 0;
-        }
-
-        .price-tag {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        .size-selector {
-            margin: 25px 0;
-        }
-
-        .size-selector label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .size-options {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .size-btn {
-            border: 2px solid #ddd;
-            background: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .size-btn:hover, .size-btn.active {
-            border-color: var(--primary-color);
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-        }
-
-        .contact-buttons {
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 30px;
+            justify-content: space-between;
         }
 
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            border-radius: 30px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .btn-call { background-color: var(--primary-color); }
-        .btn-whatsapp { background-color: #25d366; }
-
-        /* Lightbox */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
+        .product-card img {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
+            height: 220px;
+            object-fit: cover;
         }
 
-        .lightbox-modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            color: #ccc;
-            padding: 40px 0 20px;
-            margin-top: 50px;
+        .product-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-open {
+            display: block;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-open:hover {
+            background-color: #c38e5d;
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <i class="fa-solid fa-truck-fast"></i> Livraison rapide à domicile & créations sur-mesure préparées par Brigitte
-    </div>
+    <div class="catalog-container">
+        <h1>Nos Compositions et Fleurs</h1>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <h1>Au Nom de la Rose</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#accueil">Accueil</a></li>
-                    <li><a href="index.html#bouquets">Nos Bouquets</a></li>
-                    <li><a href="index.html#prestations">Prestations</a></li>
-                    <li><a href="index.html#histoire">Notre Histoire</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <div class="products-grid">
 
-    <!-- MAIN PRODUCT SECTION -->
-    <main class="container">
-        <div style="margin-top: 20px;">
-            <a href="index.html#bouquets" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">
-                <i class="fa-solid fa-arrow-left"></i> Retour aux bouquets
-            </a>
-        </div>
-
-        <div class="product-page">
-            <div class="product-image">
-                <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat" id="main-product-img">
-            </div>
-
-            <div class="product-info">
-                <h1>Bouquet Éclat</h1>
-                <p style="color: #666; font-size: 1.05rem;">
-                    Une composition ensoleillée et vibrante aux tons chauds. Soigneusement arrangé par Brigitte, ce bouquet apporte lumière et énergie grâce à ses nuances éclatantes et sa sélection rigoureuse de fleurs fraîches.
-                </p>
-
-                <div class="price-tag" id="display-price">29 €</div>
-
-                <div class="size-selector">
-                    <label>Choisissez votre taille :</label>
-                    <div class="size-options">
-                        <button class="size-btn active" onclick="updatePrice(29, 'Taille S (Classique)', event)">Taille S - 29 €</button>
-                        <button class="size-btn" onclick="updatePrice(49, 'Taille M (Généreux)', event)">Taille M - 49 €</button>
-                        <button class="size-btn" onclick="updatePrice(69, 'Taille L (Prestige)', event)">Taille L - 69 €</button>
+            <!-- Produit 1 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg</div>
+                        <div class="product-price">35,00 €</div>
                     </div>
-                </div>
-
-                <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; margin: 20px 0;">
-                    <p style="margin: 0 0 5px 0; font-weight: bold;"><i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> Conseils d'entretien :</p>
-                    <p style="margin: 0; font-size: 0.88rem; color: #555;">Recoupez les tiges en biais tous les 2 jours et renouvellez l'eau fraîche de votre vase pour une fraîcheur prolongée.</p>
-                </div>
-
-                <h3>Commander ce bouquet :</h3>
-                <div class="contact-buttons">
-                    <a id="whatsapp-btn" href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20commander%20le%20Bouquet%20Éclat%20(Taille%20S%20-%2029€)" class="btn-action btn-whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Commander par WhatsApp
-                    </a>
-                    <a href="tel:+4515221767454" class="btn-action btn-call">
-                        <i class="fa-solid fa-phone"></i> Commander par Téléphone
-                    </a>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightbox" class="lightbox-modal" onclick="this.style.display='none'">
-        <img id="lightbox-img" src="" alt="Agrandissement">
+            <!-- Produit 2 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg</div>
+                        <div class="product-price">40,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg</div>
+                        <div class="product-price">30,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54.jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.54.jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54.jpeg</div>
+                        <div class="product-price">32,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.54.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" alt="WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg</div>
+                        <div class="product-price">55,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 6 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg</div>
+                        <div class="product-price">38,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 7 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg</div>
+                        <div class="product-price">42,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 8 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" alt="WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg</div>
+                        <div class="product-price">48,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 9 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" alt="WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg</div>
+                        <div class="product-price">45,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 10 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55.jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.55.jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55.jpeg</div>
+                        <div class="product-price">36,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 11 -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.56.jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.56.jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.56.jpeg</div>
+                        <div class="product-price">50,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.56.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <!-- Produit 12 (Les 3 dernières photos récentes) -->
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" alt="WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg</div>
+                        <div class="product-price">45,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg</div>
+                        <div class="product-price">39,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" alt="WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg</div>
+                        <div class="product-price">42,00 €</div>
+                    </div>
+                    <a href="WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container" style="text-align: center; font-size: 0.85rem;">
-            <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- SCRIPT TARIFAIRE & LIGHTBOX -->
-    <script>
-        function updatePrice(price, sizeLabel, evt) {
-            document.getElementById('display-price').innerText = price + ' €';
-            
-            // Mettre à jour le bouton WhatsApp avec les bons détails
-            const message = encodeURIComponent(`Bonjour, je souhaite commander le Bouquet Éclat (${sizeLabel} - ${price}€)`);
-            document.getElementById('whatsapp-btn').href = `https://wa.me/4515221767454?text=${message}`;
-
-            // Gestion de la classe active
-            const buttons = document.querySelectorAll('.size-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if (evt && evt.target) {
-                evt.target.classList.add('active');
-            }
-        }
-
-        // Lightbox
-        const mainImg = document.getElementById('main-product-img');
-        mainImg.addEventListener('click', () => {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = mainImg.src;
-            lightbox.style.display = 'flex';
-        });
-    </script>
 </body>
 </html>
