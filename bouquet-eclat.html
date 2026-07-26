@@ -52,6 +52,7 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
+            cursor: pointer;
         }
 
         .product-info {
@@ -62,10 +63,23 @@
             justify-content: space-between;
         }
 
-        .product-name {
-            font-size: 0.85rem;
-            font-weight: 600;
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
             color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .product-filename {
+            font-size: 0.75rem;
+            color: #999;
             margin-bottom: 10px;
             word-break: break-all;
         }
@@ -87,12 +101,25 @@
             text-decoration: none;
             font-weight: 500;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
         }
 
         .btn-open:hover {
             background-color: #c38e5d;
         }
     </style>
+    <script>
+        function demanderTaille(nomProduit, urlImage) {
+            let taille = prompt("Choisissez la taille pour " + nomProduit + " :\n1. Petit\n2. Moyen\n3. Grand\n\nVeuillez entrer votre choix :");
+            if (taille) {
+                alert("Vous avez choisi la taille : " + taille + " pour " + nomProduit + ".");
+                window.open(urlImage, '_blank');
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -103,169 +130,197 @@
 
             <!-- Produit 1 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" alt="Bouquet Romance" onclick="demanderTaille('Bouquet Romance', 'WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg</div>
+                        <div class="product-title">Bouquet Romance</div>
+                        <div class="product-desc">Un magnifique assemblage de fleurs tendres et colorées, idéal pour exprimer vos sentiments avec élégance.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg</div>
                         <div class="product-price">35,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Bouquet Romance', 'WhatsApp Image 2026-07-26 at 04.29.54 (2).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 2 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" alt="Éclat Pastel" onclick="demanderTaille('Éclat Pastel', 'WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg</div>
+                        <div class="product-title">Éclat Pastel</div>
+                        <div class="product-desc">Des nuances douces et apaisantes pour illuminer délicatement tous les intérieurs et célébrer les beaux moments.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg</div>
                         <div class="product-price">40,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Éclat Pastel', 'WhatsApp Image 2026-07-26 at 04.29.54 (3).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 3 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" alt="Douceur Botanique" onclick="demanderTaille('Douceur Botanique', 'WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg</div>
+                        <div class="product-title">Douceur Botanique</div>
+                        <div class="product-desc">Une composition naturelle et rafraîchissante qui apporte une touche de verdure et de gaieté chez vous.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg</div>
                         <div class="product-price">30,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Douceur Botanique', 'WhatsApp Image 2026-07-26 at 04.29.54 (4).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 4 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.54.jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.54.jpeg" alt="Harmonie Florale" onclick="demanderTaille('Harmonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.54.jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.54.jpeg</div>
+                        <div class="product-title">Harmonie Florale</div>
+                        <div class="product-desc">Un mariage subtil de textures et de parfums délicats sélectionnés pour leur fraîcheur irréprochable.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.54.jpeg</div>
                         <div class="product-price">32,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.54.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Harmonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.54.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 5 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" alt="Passion Rose" onclick="demanderTaille('Passion Rose', 'WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg</div>
+                        <div class="product-title">Passion Rose</div>
+                        <div class="product-desc">Un bouquet somptueux et généreux, pensé pour marquer les grands événements et illuminer les cœurs.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg</div>
                         <div class="product-price">55,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Passion Rose', 'WhatsApp Image 2026-07-26 at 04.29.55 (1).jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 6 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" alt="Jardin Secret" onclick="demanderTaille('Jardin Secret', 'WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg</div>
+                        <div class="product-title">Jardin Secret</div>
+                        <div class="product-desc">Une création florale pleine de charme et d'authenticité, rappelant la beauté d'un jardin secret en fleurs.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg</div>
                         <div class="product-price">38,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Jardin Secret', 'WhatsApp Image 2026-07-26 at 04.29.55 (2).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 7 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" alt="Tendre Promesse" onclick="demanderTaille('Tendre Promesse', 'WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg</div>
+                        <div class="product-title">Tendre Promesse</div>
+                        <div class="product-desc">Un bouquet raffiné qui allie la poésie des couleurs douces à la noblesse de fleurs d'exception.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg</div>
                         <div class="product-price">42,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Tendre Promesse', 'WhatsApp Image 2026-07-26 at 04.29.55 (3).jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 8 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" alt="Symphonie Florale" onclick="demanderTaille('Symphonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg</div>
+                        <div class="product-title">Symphonie Florale</div>
+                        <div class="product-desc">Une explosion de couleurs et de vitalité pour offrir un cadeau inoubliable et lumineux.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg</div>
                         <div class="product-price">48,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Symphonie Florale', 'WhatsApp Image 2026-07-26 at 04.29.55 (4).jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 9 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" alt="Élégance Sauvage" onclick="demanderTaille('Élégance Sauvage', 'WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg</div>
+                        <div class="product-title">Élégance Sauvage</div>
+                        <div class="product-desc">Un style champêtre et élégant qui met en valeur la beauté brute et naturelle de chaque fleur.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg</div>
                         <div class="product-price">45,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Élégance Sauvage', 'WhatsApp Image 2026-07-26 at 04.29.55 (5).jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 10 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55.jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55.jpeg" alt="Charme d'Antan" onclick="demanderTaille('Charme d\'Antan', 'WhatsApp Image 2026-07-26 at 04.29.55.jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55.jpeg</div>
+                        <div class="product-title">Charme d'Antan</div>
+                        <div class="product-desc">Des teintes nostalgiques et chaleureuses pour une décoration florale pleine de cachet et d'authenticité.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55.jpeg</div>
                         <div class="product-price">36,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Charme d\'Antan', 'WhatsApp Image 2026-07-26 at 04.29.55.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 11 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.56.jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.56.jpeg" alt="Prestige Floral" onclick="demanderTaille('Prestige Floral', 'WhatsApp Image 2026-07-26 at 04.29.56.jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.56.jpeg</div>
+                        <div class="product-title">Prestige Floral</div>
+                        <div class="product-desc">Une composition haut de gamme majestueuse, parfaite pour faire forte impression lors d'une occasion spéciale.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.56.jpeg</div>
                         <div class="product-price">50,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.56.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Prestige Floral', 'WhatsApp Image 2026-07-26 at 04.29.56.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 12 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" alt="Bouquet Éclat" onclick="demanderTaille('Bouquet Éclat', 'WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg</div>
+                        <div class="product-title">Bouquet Éclat</div>
+                        <div class="product-desc">Une composition lumineuse et chaleureuse qui illumine tous les intérieurs avec beaucoup d'éclat.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg</div>
                         <div class="product-price">45,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Bouquet Éclat', 'WhatsApp Image 2026-07-26 at 04.29.55 (5)_2.jpg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 13 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" alt="Douceur Lilas" onclick="demanderTaille('Douceur Lilas', 'WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg</div>
+                        <div class="product-title">Douceur Lilas</div>
+                        <div class="product-desc">Des tons délicats aux accents printaniers pour apporter douceur et poésie à votre décoration.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg</div>
                         <div class="product-price">39,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Douceur Lilas', 'WhatsApp Image 2026-07-26 at 04.29.55_2.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
             <!-- Produit 14 -->
             <div class="product-card">
-                <img src="images/WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" alt="WhatsApp Image">
+                <img src="WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" alt="Étoile Pourpre" onclick="demanderTaille('Étoile Pourpre', 'WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg')">
                 <div class="product-info">
                     <div>
-                        <div class="product-name">WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg</div>
+                        <div class="product-title">Étoile Pourpre</div>
+                        <div class="product-desc">Des contrastes flamboyants et raffinés pour un effet visuel saisissant et haut en couleur.</div>
+                        <div class="product-filename">WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg</div>
                         <div class="product-price">42,00 €</div>
                     </div>
-                    <a href="images/WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg" class="btn-open" target="_blank">Ouvrir et consulter</a>
+                    <button class="btn-open" onclick="demanderTaille('Étoile Pourpre', 'WhatsApp Image 2026-07-26 at 04.29.56_2.jpeg')">Ouvrir et consulter</button>
                 </div>
             </div>
 
