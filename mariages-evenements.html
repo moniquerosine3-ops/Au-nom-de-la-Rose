@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariages & Événements | Au Nom de la Rose</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary-color: #d4a373; --secondary-color: #2b2b2b; --bg-light: #fdfbf7; --text-dark: #333333; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fafafa; color: var(--text-dark); margin: 0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .top-bar { background-color: var(--primary-color); color: white; text-align: center; padding: 8px; font-size: 0.85rem; }
+        header { background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo h1 { margin: 0; font-size: 1.8rem; color: var(--secondary-color); font-family: Georgia, serif; }
+        nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
+        .service-page { margin: 40px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .service-image img { width: 100%; border-radius: 10px; height: 450px; object-fit: cover; cursor: pointer; }
+        .service-info h1 { color: var(--secondary-color); font-family: Georgia, serif; margin-top: 0; }
+        .btn-action { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 20px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; font-size: 1rem; margin-top: 10px; }
+        .btn-call { background-color: var(--primary-color); }
+        .btn-whatsapp { background-color: #25d366; }
+        .lightbox-modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); justify-content: center; align-items: center; cursor: zoom-out; }
+        .lightbox-modal img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+        footer { background: var(--secondary-color); color: #ccc; padding: 30px 0; margin-top: 50px; text-align: center; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="top-bar"><i class="fa-solid fa-truck-fast"></i> Service sur-mesure préparé par Brigitte</div>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><h1>Au Nom de la Rose</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#bouquets">Nos Bouquets</a></li>
+                    <li><a href="index.html#prestations">Prestations</a></li>
+                    <li><a href="index.html#histoire">Notre Histoire</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="margin-top: 20px;">
+            <a href="index.html#prestations" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">
+                <i class="fa-solid fa-arrow-left"></i> Retour aux prestations
+            </a>
+        </div>
+
+        <div class="service-page">
+            <div class="service-image">
+                <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements" id="main-service-img">
+            </div>
+            <div class="service-info">
+                <h1>Mariages & Événements Sur-Mesure</h1>
+                <p style="color: #666; font-size: 1.05rem;">
+                    Pour le plus beau jour de votre vie ou pour vos réceptions d'exception, Brigitte conçoit une scénographie florale unique : arches fleuries, centres de table élégants, bouquets de mariée, boutonnieres et décorations d'église ou de salle.
+                </p>
+                <div style="background: var(--bg-light); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <h3 style="margin-top: 0; color: var(--secondary-color);">Ce que nous proposons :</h3>
+                    <ul style="color: #555; padding-left: 20px;">
+                        <li>Rendez-vous conseil personnalisé à l'atelier</li>
+                        <li>Création sur-mesure selon votre thème et palette de couleurs</li>
+                        <li>Livraison et installation complète sur le lieu de l'événement</li>
+                    </ul>
+                </div>
+                <h3>Demander un devis personnalisé :</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="https://wa.me/4515221767454?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20événement/mariage" class="btn-action btn-whatsapp" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
+                    </a>
+                    <a href="tel:+4515221767454" class="btn-action btn-call">
+                        <i class="fa-solid fa-phone"></i> Prendre rendez-vous par téléphone
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox-modal" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p></div>
+    </footer>
+
+    <script>
+        const img = document.getElementById('main-service-img');
+        img.addEventListener('click', () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
