@@ -220,6 +220,22 @@
             margin-bottom: 10px;
         }
 
+        /* Style Galerie 2 Photos Brigitte */
+        .brigitte-gallery {
+            display: flex;
+            gap: 15px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .brigitte-gallery img {
+            width: 50%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
         /* Contact Box */
         .contact-box {
             background: white;
@@ -352,13 +368,16 @@
 
     <main class="container">
 
-        <!-- RUBRIQUE ACCUEIL / NOTRE HISTOIRE (SEULEMENT ICI POUR BRIGITTE) -->
+        <!-- RUBRIQUE L'ATELIER DE BRIGITTE AVEC LES 2 PHOTOS -->
         <section id="histoire" style="margin-top: 50px;">
             <div style="background: white; border-radius: 12px; padding: 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                <div style="flex: 1; min-width: 280px;">
-                    <!-- PHOTO DE BRIGITTE UNIQUEMENT ICI -->
-                    <img src="images/Brigitte.jpg" alt="Brigitte - Fleuriste Artisanal" style="width: 100%; border-radius: 8px; height: 320px; object-fit: cover;">
+                
+                <!-- GALERIE AVEC brigitte.jpg ET Brigitte.jpg -->
+                <div class="brigitte-gallery">
+                    <img src="images/brigitte.jpg" alt="Brigitte - Photo 1">
+                    <img src="images/Brigitte.jpg" alt="Brigitte - Photo 2">
                 </div>
+
                 <div style="flex: 1; min-width: 280px;">
                     <h2 style="color: var(--secondary-color); margin-top: 0;">L'Atelier de Brigitte</h2>
                     <p style="color: #555;">Bienvenue chez <strong>Au Nom de la Rose</strong> ! Passionnée par le monde végétal et l'élégance florale, Brigitte met tout son savoir-faire artisanal à votre service pour créer des compositions uniques.</p>
@@ -422,7 +441,7 @@
             </div>
         </section>
 
-        <!-- RUBRIQUE NOS PRESTATIONS (Remplacé par Bouquet 4, 5 et 6) -->
+        <!-- RUBRIQUE NOS PRESTATIONS -->
         <section id="prestations">
             <div class="section-header">
                 <h2>Nos Prestations Sur-Mesure</h2>
