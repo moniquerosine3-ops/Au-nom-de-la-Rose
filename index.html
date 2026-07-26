@@ -16,6 +16,8 @@
             --rose-accent: #c45d44;
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+
         body { 
             font-family: 'Jost', sans-serif; 
             background-color: #faf8f5; 
@@ -86,7 +88,7 @@
             color: var(--primary-color);
         }
 
-        /* Section Hero / Accueil */
+        /* Hero Section */
         .hero-section {
             padding: 60px 0;
             text-align: center;
@@ -110,7 +112,7 @@
             font-weight: 300;
         }
 
-        /* Grille des Bouquets (Alignement côte à côte forcé) */
+        /* Grille des Bouquets (Forcée côte à côte en 3 colonnes) */
         .prestations-section {
             padding: 60px 0;
         }
@@ -150,11 +152,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
         }
 
         .card img {
@@ -167,19 +164,17 @@
 
         .card-content {
             padding: 25px;
-            text-align: left;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            flex-grow: 1;
         }
 
         .card-content h3 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.3rem;
             color: var(--secondary-color);
-            margin-top: 0;
-            margin-bottom: 8px;
+            margin: 0 0 8px 0;
         }
 
         .card-price {
@@ -214,7 +209,7 @@
             background-color: var(--primary-color);
         }
 
-        /* Section Formulaire de Commande */
+        /* Formulaire de Commande */
         .order-form-section {
             background: white;
             padding: 50px;
@@ -243,10 +238,6 @@
             font-size: 0.95rem;
         }
 
-        .payment-banner strong {
-            color: var(--secondary-color);
-        }
-
         .form-group {
             margin-bottom: 20px;
         }
@@ -267,7 +258,6 @@
             font-family: inherit;
             font-size: 0.95rem;
             background-color: #faf8f5;
-            box-sizing: border-box;
         }
 
         .form-row {
@@ -297,7 +287,7 @@
             background-color: var(--primary-color);
         }
 
-        /* Section Contact & Magasin */
+        /* Contact & Magasin */
         .contact-section {
             background: white;
             padding: 50px;
@@ -430,7 +420,7 @@
             <div class="cards-grid">
                 <!-- Bouquet Tendresse -->
                 <div class="card">
-                    <img src="images/bouquet-tendresse-1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80'" alt="Bouquet Tendresse">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80" alt="Bouquet Tendresse">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Tendresse</h3>
@@ -443,7 +433,7 @@
 
                 <!-- Bouquet Passion -->
                 <div class="card">
-                    <img src="images/abonnement.jpeg" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80'" alt="Bouquet Passion">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Bouquet Passion">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Passion</h3>
@@ -456,7 +446,7 @@
 
                 <!-- Bouquet Éclat -->
                 <div class="card">
-                    <img src="images/livraison.jpeg" onerror="this.src='https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80'" alt="Bouquet Éclat">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80" alt="Bouquet Éclat">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Éclat</h3>
@@ -532,7 +522,7 @@
             </form>
         </section>
 
-        <!-- Section Contact & Magasin -->
+        <!-- Contact & Magasin -->
         <section id="contact" class="contact-section">
             <h3>Notre Boutique & Contact</h3>
             <p style="color: #666; font-size: 0.95rem; font-weight: 300;">Venez nous rendre visite ou contactez-nous directement pour toute commande personnalisée.</p>
