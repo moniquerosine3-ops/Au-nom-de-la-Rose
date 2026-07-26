@@ -83,7 +83,7 @@
             color: var(--primary-color);
         }
 
-        /* Hero Banner */
+        /* Hero Banner (Couverture) */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Bouquet 1.jpeg') center/cover;
             height: 55vh;
@@ -166,6 +166,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
+            cursor: pointer; /* Indique que l'image est cliquable */
         }
 
         .card-body {
@@ -220,7 +221,7 @@
             margin-bottom: 10px;
         }
 
-        /* Style Galerie 2 Photos Brigitte */
+        /* Galerie 2 Photos Brigitte */
         .brigitte-gallery {
             display: flex;
             gap: 15px;
@@ -234,6 +235,12 @@
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            cursor: pointer; /* Indique que l'image est cliquable */
+            transition: transform 0.2s ease;
+        }
+
+        .brigitte-gallery img:hover {
+            transform: scale(1.02);
         }
 
         /* Contact Box */
@@ -268,6 +275,34 @@
         .btn-call { background-color: var(--primary-color); }
         .btn-whatsapp { background-color: #25d366; }
         .btn-email { background-color: #ff9f43; }
+
+        /* Modal Lightbox pour afficher l'image en grand */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
 
         /* Footer */
         footer {
@@ -336,7 +371,7 @@
         </div>
     </header>
 
-    <!-- BANNIÈRE HERO -->
+    <!-- BANNIÈRE HERO (COUVERTURE - NON CLIQUABLE) -->
     <section id="accueil" class="hero">
         <div>
             <h2>L'art floral sous toutes ses formes</h2>
@@ -372,10 +407,10 @@
         <section id="histoire" style="margin-top: 50px;">
             <div style="background: white; border-radius: 12px; padding: 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
                 
-                <!-- GALERIE AVEC brigitte.jpg ET Brigitte.jpg -->
+                <!-- GALERIE DES 2 IMAGES CLIQUABLES DE BRIGITTE -->
                 <div class="brigitte-gallery">
-                    <img src="images/brigitte.jpg" alt="Brigitte - Photo 1">
-                    <img src="images/Brigitte.jpg" alt="Brigitte - Photo 2">
+                    <img src="images/brigitte.jpg" alt="Brigitte - Photo 1" class="zoomable-img">
+                    <img src="images/Brigitte.jpg" alt="Brigitte - Photo 2" class="zoomable-img">
                 </div>
 
                 <div style="flex: 1; min-width: 280px;">
@@ -396,7 +431,7 @@
             <div class="grid-3">
                 <!-- Bouquet 1 -->
                 <div class="card">
-                    <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion">
+                    <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion" class="zoomable-img">
                     <div class="card-body">
                         <div>
                             <a href="bouquet-passion.html" class="card-title">Bouquet Passion</a>
@@ -411,7 +446,7 @@
 
                 <!-- Bouquet 2 -->
                 <div class="card">
-                    <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse">
+                    <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse" class="zoomable-img">
                     <div class="card-body">
                         <div>
                             <a href="#" class="card-title">Bouquet Tendresse</a>
@@ -426,7 +461,7 @@
 
                 <!-- Bouquet 3 -->
                 <div class="card">
-                    <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat">
+                    <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat" class="zoomable-img">
                     <div class="card-body">
                         <div>
                             <a href="#" class="card-title">Bouquet Éclat</a>
@@ -451,7 +486,7 @@
             <div class="grid-3">
                 <!-- Prestation 1 -->
                 <div class="card">
-                    <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements">
+                    <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements" class="zoomable-img">
                     <div class="card-body">
                         <div>
                             <h3 style="font-size: 1.1rem; margin-top: 0; color: var(--secondary-color);">Mariages & Événements</h3>
@@ -462,7 +497,7 @@
 
                 <!-- Prestation 2 -->
                 <div class="card">
-                    <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux">
+                    <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux" class="zoomable-img">
                     <div class="card-body">
                         <div>
                             <h3 style="font-size: 1.1rem; margin-top: 0; color: var(--secondary-color);">Abonnements Floraux</h3>
@@ -473,7 +508,7 @@
 
                 <!-- Prestation 3 -->
                 <div class="card">
-                    <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile">
+                    <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile" class="zoomable-img">
                     <div class="card-body">
                         <div>
                             <h3 style="font-size: 1.1rem; margin-top: 0; color: var(--secondary-color);">Livraison à domicile</h3>
@@ -512,6 +547,11 @@
 
     </main>
 
+    <!-- FENÊTRE MODALE POUR AFFICHER EN GRAND AU CLIC -->
+    <div id="lightbox" class="lightbox-modal" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
     <!-- PIED DE PAGE -->
     <footer>
         <div class="container footer-grid">
@@ -548,6 +588,18 @@
             <p>&copy; 2026 Au Nom de la Rose. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <!-- SCRIPT JS POUR L'OUVERTURE EN GRAND DE N'IMPORTE QUELLE IMAGE (EXCEPTÉ LA BANNIÈRE DE COUVERTURE) -->
+    <script>
+        document.querySelectorAll('.zoomable-img, .card img, .brigitte-gallery img').forEach(image => {
+            image.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = image.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+    </script>
 
 </body>
 </html>
