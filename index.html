@@ -134,7 +134,7 @@
             background: var(--primary-light);
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
+            padding: 20px;
             border-radius: 6px;
             margin-bottom: 40px;
             text-align: center;
@@ -226,11 +226,9 @@
             background-color: var(--primary-color);
         }
 
-        .btn-paypal-card {
+        .btn-paypal-info {
             background-color: #0070ba;
-        }
-        .btn-paypal-card:hover {
-            background-color: #003087;
+            cursor: default;
         }
 
         .btn-wa-card {
@@ -363,13 +361,13 @@
 
             <div class="payment-instructions">
                 <i class="fa-solid fa-circle-info" style="color: var(--primary-color);"></i> 
-                <strong>Mode d'emploi :</strong> Payez via PayPal à l'adresse <u>celinecohen2025@gmail.com</u>, puis envoyez impérativement votre reçu de confirmation sur notre WhatsApp pour valider la commande.
+                <strong>Modalité de commande :</strong> Effectuez un <u>transfert PayPal</u> vers notre compte <strong>celinecohen2025@gmail.com</strong>, puis envoyez impérativement votre reçu de confirmation sur notre WhatsApp pour valider la préparation de votre bouquet.
             </div>
 
             <div class="cards-grid">
                 <!-- Bouquet Tendresse -->
                 <div class="card">
-                    <img src="images/Bouquet Tendresse 1.jpeg" alt="Bouquet Tendresse">
+                    <img src="images/bouquet-tendresse-1.jpeg" alt="Bouquet Tendresse" onerror="this.src='https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80'">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Tendresse</h3>
@@ -377,10 +375,10 @@
                             <p>Douceur pastel de pivoines, roses délicates et eucalyptus frais pour exprimer votre affection.</p>
                         </div>
                         <div class="card-actions">
-                            <a href="https://www.paypal.com/ncp/payment?hosted_button_id=DEMO" class="btn-card btn-paypal-card" target="_blank">
-                                <i class="fa-brands fa-paypal"></i> Payer avec PayPal
-                            </a>
-                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20paiement%20PayPal%20pour%20le%20Bouquet%20Tendresse.%20(Compte:%20celinecohen2025@gmail.com)" class="btn-card btn-wa-card" target="_blank">
+                            <div class="btn-card btn-paypal-info">
+                                <i class="fa-brands fa-paypal"></i> Transférer sur : celinecohen2025@gmail.com
+                            </div>
+                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal%20vers%20celinecohen2025@gmail.com%20pour%20le%20Bouquet%20Tendresse." class="btn-card btn-wa-card" target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
                             </a>
                             <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
@@ -390,7 +388,7 @@
 
                 <!-- Bouquet Passion -->
                 <div class="card">
-                    <img src="images/Bouquet Passion 1.jpeg" alt="Bouquet Passion" onerror="this.src='images/Bouquet Tendresse 2.jpeg'">
+                    <img src="images/abonnement.jpeg" alt="Bouquet Passion" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80'">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Passion</h3>
@@ -398,10 +396,10 @@
                             <p>Un éclat flamboyant de roses rouges et de tons chaleureux pour célébrer l'amour intense.</p>
                         </div>
                         <div class="card-actions">
-                            <a href="https://www.paypal.com/ncp/payment?hosted_button_id=DEMO" class="btn-card btn-paypal-card" target="_blank">
-                                <i class="fa-brands fa-paypal"></i> Payer avec PayPal
-                            </a>
-                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20paiement%20PayPal%20pour%20le%20Bouquet%20Passion.%20(Compte:%20celinecohen2025@gmail.com)" class="btn-card btn-wa-card" target="_blank">
+                            <div class="btn-card btn-paypal-info">
+                                <i class="fa-brands fa-paypal"></i> Transférer sur : celinecohen2025@gmail.com
+                            </div>
+                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal%20vers%20celinecohen2025@gmail.com%20pour%20le%20Bouquet%20Passion." class="btn-card btn-wa-card" target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
                             </a>
                             <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
@@ -411,7 +409,7 @@
 
                 <!-- Bouquet Éclat -->
                 <div class="card">
-                    <img src="images/Bouquet Eclat 1.jpeg" alt="Bouquet Éclat" onerror="this.src='images/Bouquet Tendresse 3.jpeg'">
+                    <img src="images/livraison.jpeg" alt="Bouquet Éclat" onerror="this.src='https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80'">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Éclat</h3>
@@ -419,10 +417,10 @@
                             <p>Une composition lumineuse et joyeuse pour ensoleiller toutes vos plus belles occasions.</p>
                         </div>
                         <div class="card-actions">
-                            <a href="https://www.paypal.com/ncp/payment?hosted_button_id=DEMO" class="btn-card btn-paypal-card" target="_blank">
-                                <i class="fa-brands fa-paypal"></i> Payer avec PayPal
-                            </a>
-                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20paiement%20PayPal%20pour%20le%20Bouquet%20Eclat.%20(Compte:%20celinecohen2025@gmail.com)" class="btn-card btn-wa-card" target="_blank">
+                            <div class="btn-card btn-paypal-info">
+                                <i class="fa-brands fa-paypal"></i> Transférer sur : celinecohen2025@gmail.com
+                            </div>
+                            <a href="https://wa.me/4515221767454?text=Bonjour,%20voici%20mon%20reçu%20de%20transfert%20PayPal%20vers%20celinecohen2025@gmail.com%20pour%20le%20Bouquet%20Eclat." class="btn-card btn-wa-card" target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i> Envoyer le reçu sur WhatsApp
                             </a>
                             <a href="bouquet-tendresse.html" class="btn-card" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Voir les détails</a>
