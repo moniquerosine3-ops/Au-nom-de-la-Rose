@@ -30,7 +30,7 @@
             padding: 0 20px;
         }
 
-        /* En-tête & Nav */
+        /* Top Bar */
         .top-bar {
             background-color: var(--primary-color);
             color: white;
@@ -40,6 +40,7 @@
             font-weight: 500;
         }
 
+        /* Header & Nav */
         header {
             background: white;
             position: sticky;
@@ -85,7 +86,7 @@
         /* Hero Banner */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Bouquet 1.jpeg') center/cover;
-            height: 60vh;
+            height: 55vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -123,7 +124,7 @@
             background-color: #bc8a5f;
         }
 
-        /* Titles */
+        /* Section Titles */
         .section-header {
             text-align: center;
             margin: 50px 0 30px;
@@ -191,12 +192,13 @@
             margin: 10px 0;
         }
 
-        /* Banner d'engagements */
+        /* Banner Engagements */
         .features {
             background: var(--bg-light);
             padding: 40px 0;
             margin-top: 50px;
-            border-y: 1px solid #eee;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
 
         .features-grid {
@@ -218,7 +220,7 @@
             margin-bottom: 10px;
         }
 
-        /* Contact & Horaires */
+        /* Contact Box */
         .contact-box {
             background: white;
             border-radius: 12px;
@@ -295,7 +297,7 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
+    <!-- BARRE SUPERIEURE -->
     <div class="top-bar">
         <i class="fa-solid fa-truck-fast"></i> Livraison rapide à domicile & créations sur-mesure préparées par Brigitte
     </div>
@@ -318,11 +320,11 @@
         </div>
     </header>
 
-    <!-- SECTION HERO -->
+    <!-- BANNIÈRE HERO -->
     <section id="accueil" class="hero">
         <div>
             <h2>L'art floral sous toutes ses formes</h2>
-            <p>Compositions artisanales, fraiches et élégantes pour tous vos moments de vie</p>
+            <p>Compositions artisanales, fraîches et élégantes pour tous vos moments de vie</p>
             <a href="#bouquets" class="btn btn-primary">Découvrir nos créations</a>
         </div>
     </section>
@@ -338,17 +340,32 @@
             <div class="feature-item">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <h4>Savoir-faire Artisanal</h4>
-                <p style="font-size: 0.85rem; color: #666;">Créations uniques réalisées par Brigitte</p>
+                <p style="font-size: 0.85rem; color: #666;">Créations uniques réalisées à la main</p>
             </div>
             <div class="feature-item">
                 <i class="fa-solid fa-truck-ramp-box"></i>
                 <h4>Livraison Soignée</h4>
-                <p style="font-size: 0.85rem; color: #666;">Livraison directe à domicile ou sur le lieu d'événement</p>
+                <p style="font-size: 0.85rem; color: #666;">Acheminement rapide à domicile ou sur lieu d'événement</p>
             </div>
         </div>
     </div>
 
     <main class="container">
+
+        <!-- RUBRIQUE ACCUEIL / NOTRE HISTOIRE (SEULEMENT ICI POUR BRIGITTE) -->
+        <section id="histoire" style="margin-top: 50px;">
+            <div style="background: white; border-radius: 12px; padding: 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <div style="flex: 1; min-width: 280px;">
+                    <!-- PHOTO DE BRIGITTE UNIQUEMENT ICI -->
+                    <img src="images/Brigitte.jpg" alt="Brigitte - Fleuriste Artisanal" style="width: 100%; border-radius: 8px; height: 320px; object-fit: cover;">
+                </div>
+                <div style="flex: 1; min-width: 280px;">
+                    <h2 style="color: var(--secondary-color); margin-top: 0;">L'Atelier de Brigitte</h2>
+                    <p style="color: #555;">Bienvenue chez <strong>Au Nom de la Rose</strong> ! Passionnée par le monde végétal et l'élégance florale, Brigitte met tout son savoir-faire artisanal à votre service pour créer des compositions uniques.</p>
+                    <p style="color: #555;">Chaque fleur est sélectionnée avec rigueur pour composer des bouquets durables, harmonieux et sur-mesure qui subliment tous les événements de votre vie.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- RUBRIQUE NOS BOUQUETS -->
         <section id="bouquets">
@@ -358,7 +375,7 @@
             </div>
 
             <div class="grid-3">
-                <!-- Carte 1 -->
+                <!-- Bouquet 1 -->
                 <div class="card">
                     <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion">
                     <div class="card-body">
@@ -373,7 +390,7 @@
                     </div>
                 </div>
 
-                <!-- Carte 2 -->
+                <!-- Bouquet 2 -->
                 <div class="card">
                     <img src="images/Bouquet 2.jpeg" alt="Bouquet Tendresse">
                     <div class="card-body">
@@ -388,7 +405,7 @@
                     </div>
                 </div>
 
-                <!-- Carte 3 -->
+                <!-- Bouquet 3 -->
                 <div class="card">
                     <img src="images/Bouquet 3.jpeg" alt="Bouquet Éclat">
                     <div class="card-body">
@@ -405,7 +422,7 @@
             </div>
         </section>
 
-        <!-- RUBRIQUE NOS PRESTATIONS -->
+        <!-- RUBRIQUE NOS PRESTATIONS (Remplacé par Bouquet 4, 5 et 6) -->
         <section id="prestations">
             <div class="section-header">
                 <h2>Nos Prestations Sur-Mesure</h2>
@@ -418,8 +435,8 @@
                     <img src="images/Bouquet 4.jpeg" alt="Mariages & Événements">
                     <div class="card-body">
                         <div>
-                            <h3 style="font-size: 1.1rem; margin-top: 0;">Mariages & Événements</h3>
-                            <p style="font-size: 0.9rem; color: #666;">Création de décors de cérémonie, bouquets de mariée, arches et centres de table sur-mesure.</p>
+                            <h3 style="font-size: 1.1rem; margin-top: 0; color: var(--secondary-color);">Mariages & Événements</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Décors sur mesure pour votre grand jour : arches, centres de table et bouquets de mariée.</p>
                         </div>
                     </div>
                 </div>
@@ -429,35 +446,21 @@
                     <img src="images/Bouquet 5.jpeg" alt="Abonnements Floraux">
                     <div class="card-body">
                         <div>
-                            <h3 style="font-size: 1.1rem; margin-top: 0;">Abonnements Floraux</h3>
-                            <p style="font-size: 0.9rem; color: #666;">Livraison régulière de compositions fraîches pour entreprises, hôtels, restaurants ou particuliers.</p>
+                            <h3 style="font-size: 1.1rem; margin-top: 0; color: var(--secondary-color);">Abonnements Floraux</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Fleurissez vos espaces régulièrement (entreprises, hôtels, restaurants ou résidences).</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Prestation 3 -->
                 <div class="card">
-                    <img src="images/Bouquet 6.jpeg" alt="Livraison à Domicile">
+                    <img src="images/Bouquet 6.jpeg" alt="Livraison à domicile">
                     <div class="card-body">
                         <div>
-                            <h3 style="font-size: 1.1rem; margin-top: 0;">Livraison à Domicile</h3>
-                            <p style="font-size: 0.9rem; color: #666;">Acheminement rapide et sécurisé de vos fleurs en main propre pour garantir une fraîcheur optimale.</p>
+                            <h3 style="font-size: 1.1rem; margin-top: 0; color: var(--secondary-color);">Livraison à domicile</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Vos fleurs fraîches livrées avec soin directement entre les mains de leurs destinataires.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RUBRIQUE NOTRE HISTOIRE -->
-        <section id="histoire" style="margin-top: 60px;">
-            <div style="background: white; border-radius: 12px; padding: 40px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                <div style="flex: 1; min-width: 280px;">
-                    <img src="images/Bouquet 7.jpeg" alt="Brigitte Fleuriste" style="width: 100%; border-radius: 8px; height: 300px; object-fit: cover;">
-                </div>
-                <div style="flex: 1; min-width: 280px;">
-                    <h2 style="color: var(--secondary-color); margin-top: 0;">L'Atelier "Au Nom de la Rose"</h2>
-                    <p style="color: #555;">Fondé avec la passion des belles fleurs et du travail bien fait, notre atelier met à votre service une expertise artisanale authentique. Brigitte sélectionne chaque tige chez nos producteurs partenaires pour vous garantir des compositions éclatantes et durables.</p>
-                    <p style="color: #555;">Chaque événement de votre vie mérite une attention unique : nous créons des arrangements ajustés à vos besoins, votre style et votre budget.</p>
                 </div>
             </div>
         </section>
@@ -470,8 +473,8 @@
 
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; display: inline-block; text-align: center; margin-bottom: 20px;">
                     <p style="margin: 0; font-weight: bold; color: var(--secondary-color);"><i class="fa-regular fa-clock"></i> Nos Horaires d'Ouverture</p>
-                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #555;"><strong>Du lundi au samedi :</strong> 9h00 - 20h00</p>
-                    <p style="margin: 2px 0 0 0; font-size: 0.9rem; color: #555;"><strong>Le dimanche :</strong> 9h00 - 13h00</p>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #555;"><strong>Du lundi au samedi :</strong> de 9h00 à 20h00</p>
+                    <p style="margin: 2px 0 0 0; font-size: 0.9rem; color: #555;"><strong>Le dimanche :</strong> de 9h00 à 13h00</p>
                 </div>
 
                 <div class="contact-buttons">
