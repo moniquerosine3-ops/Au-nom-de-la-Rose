@@ -65,7 +65,6 @@
         }
         nav a:hover { color: var(--primary-color); }
 
-        /* Section principale du haut (style Bouquet Passion) */
         .product-hero {
             background: white;
             padding: 40px;
@@ -87,6 +86,7 @@
             object-fit: cover;
             border-radius: 6px;
             border: 1px solid var(--border-color);
+            display: block;
         }
         .product-hero-info h2 {
             font-family: 'Playfair Display', Georgia, serif;
@@ -137,9 +137,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: opacity 0.2s;
         }
-        .btn-whatsapp:hover { opacity: 0.9; }
         .btn-call {
             background-color: var(--primary-color);
             color: white;
@@ -150,11 +148,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: opacity 0.2s;
         }
-        .btn-call:hover { opacity: 0.9; }
 
-        /* Section de la grille des 8 créations en bas */
         .catalog-section {
             margin: 60px 0 40px 0;
             text-align: center;
@@ -182,15 +177,13 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            transition: transform 0.2s;
         }
-        .bouquet-card:hover {
-            transform: translateY(-5px);
-        }
+        /* Style crucial pour forcer l'affichage propre des images */
         .bouquet-card img {
             width: 100%;
             height: 220px;
             object-fit: cover;
+            display: block;
         }
         .bouquet-card-content {
             padding: 20px;
@@ -246,7 +239,6 @@
     </header>
 
     <main class="container">
-        <!-- En-tête de présentation style Bouquet Passion -->
         <section class="product-hero">
             <div class="product-hero-image">
                 <img src="Bouquet%20Tendresse%206.jpeg" alt="Bouquet Tendresse">
@@ -270,7 +262,6 @@
             </div>
         </section>
 
-        <!-- Grille des 8 variations en dessous -->
         <section class="catalog-section">
             <h3>Toutes les créations Tendresse</h3>
             <p>Choisissez le format et le bouquet qui correspondent à votre attention</p>
