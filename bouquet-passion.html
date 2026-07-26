@@ -9,20 +9,59 @@
     <style>
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 30px;
+        }
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
         .gallery-item {
             width: 100%;
-            height: 250px;
+            height: 240px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
         }
-        .gallery-item:hover {
-            transform: scale(1.03);
+        .flower-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+        .flower-title {
+            color: #d4a373;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .flower-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .flower-details {
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .flower-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2b2b2b;
+            text-align: right;
+            border-top: 1px dashed #eee;
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -47,20 +86,20 @@
 
         <div class="content-flex">
             <!-- Image principale du bouquet -->
-            <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion" class="profile-img" style="border-radius: 12px; max-width: 450px;">
+            <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion Cœur Premium" class="profile-img" style="border-radius: 12px; max-width: 450px;">
             
             <div class="text-block">
-                <h2 style="color: #d4a373; font-size: 2.2rem;">Bouquet Passion</h2>
-                <p style="font-weight: bold; font-size: 1.1rem; color: #555;">Composition florale raffinée et romantique</p>
-                <p>Le <strong>Bouquet Passion</strong> est une création artisanale éclatante, combinant des teintes intenses de pourpre, de rose et de blanc. Assemblé à la main par Brigitte, il exprime l'amour, l'élégance et la générosité.</p>
+                <h2 style="color: #d4a373; font-size: 2.2rem;">Gamme Bouquet Passion</h2>
+                <p style="font-weight: bold; font-size: 1.1rem; color: #555;">Déclinaisons florales raffinées et romantiques</p>
+                <p>La collection <strong>Bouquet Passion</strong> propose des créations artisanales éclatantes, assemblées à la main par Brigitte. Chaque composition exprime l'amour, l'élégance et la générosité à travers des fleurs fraîches sélectionnées avec soin.</p>
                 
                 <ul style="list-style: none; padding-left: 0; margin: 20px 0;">
-                    <li><i class="fa-solid fa-check" style="color: #25d366;"></i> <strong>Fleurs :</strong> Roses fraîches, œillets, orchidées premium</li>
-                    <li><i class="fa-solid fa-check" style="color: #25d366;"></i> <strong>Occasions :</strong> Déclaration d'amour, anniversaire, célébrations</li>
-                    <li><i class="fa-solid fa-check" style="color: #25d366;"></i> <strong>Fraîcheur :</strong> Assemblé à la commande</li>
+                    <li><i class="fa-solid fa-check" style="color: #25d366;"></i> <strong>Qualité :</strong> Fleurs fraîches sélectionnées le jour même</li>
+                    <li><i class="fa-solid fa-check" style="color: #25d366;"></i> <strong>Prix :</strong> Gamme variée de 26 € à 93 €</li>
+                    <li><i class="fa-solid fa-check" style="color: #25d366;"></i> <strong>Sur-mesure :</strong> Assemblé à la commande</li>
                 </ul>
 
-                <h3 style="margin-top: 25px; font-size: 1.2rem;">Commander ce bouquet :</h3>
+                <h3 style="margin-top: 25px; font-size: 1.2rem;">Commander une création :</h3>
                 <div style="display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
                     <a href="https://wa.me/22500000000" class="btn" style="background-color: #25d366; color: white;"><i class="fa-brands fa-whatsapp"></i> Commander via WhatsApp</a>
                     <a href="tel:+22500000000" class="btn" style="background-color: #d4a373; color: white;"><i class="fa-solid fa-phone"></i> Appeler</a>
@@ -68,22 +107,131 @@
             </div>
         </div>
 
-        <!-- Galerie des déclinaisons du Bouquet Passion -->
+        <!-- Galerie avec descriptions et prix -->
         <hr style="margin: 50px 0; border: none; border-top: 1px solid #eee;">
         
-        <h3 style="color: #d4a373; font-size: 1.8rem; text-align: center;">Galerie du Bouquet Passion</h3>
-        <p style="text-align: center; color: #666; margin-bottom: 20px;">Découvrez nos différentes créations de la gamme Passion</p>
+        <h3 style="color: #d4a373; font-size: 1.8rem; text-align: center;">Toutes les créations Passion</h3>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">Choisissez le format et le budget qui correspondent à votre attention</p>
 
         <div class="gallery-grid">
-            <img src="images/Bouquet 1.jpeg" alt="Bouquet Passion 1" class="gallery-item">
-            <img src="images/Bouquet 2.jpeg" alt="Bouquet Passion 2" class="gallery-item">
-            <img src="images/Bouquet 3.jpeg" alt="Bouquet Passion 3" class="gallery-item">
-            <img src="images/Bouquet 4.jpeg" alt="Bouquet Passion 4" class="gallery-item">
-            <img src="images/Bouquet 5.jpeg" alt="Bouquet Passion 5" class="gallery-item">
-            <img src="images/Bouquet 6.jpeg" alt="Bouquet Passion 6" class="gallery-item">
-            <img src="images/Bouquet 7.jpeg" alt="Bouquet Passion 7" class="gallery-item">
-            <img src="images/Bouquet 8.jpeg" alt="Bouquet Passion 8" class="gallery-item">
-            <img src="images/Bouquet 9.jpeg" alt="Bouquet Passion 9" class="gallery-item">
+            
+            <!-- Fleur 1 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 1.jpeg" alt="Cœur Passion Élégance" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Cœur Passion Élégance</h4>
+                        <p class="flower-desc">Composition généreuse taillée en forme de cœur, symbole absolu de l'amour sincère.</p>
+                        <p class="flower-details">Fleurs : Roses rouges, œillets pourpres & orchidées premium.</p>
+                    </div>
+                    <div class="flower-price">93 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 2 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 2.jpeg" alt="Douceur Champêtre" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Douceur Champêtre</h4>
+                        <p class="flower-desc">Un bouquet léger aux accents sauvages et poétiques pour embellir une belle journée.</p>
+                        <p class="flower-details">Fleurs : Roses roses, eucalyptus & fleurs de saison.</p>
+                    </div>
+                    <div class="flower-price">26 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 3 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 3.jpeg" alt="Éclat Pourpre" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Éclat Pourpre</h4>
+                        <p class="flower-desc">Harmonie vibrante aux tons intenses, apportant chic et profondeur à votre intérieur.</p>
+                        <p class="flower-details">Fleurs : Roses velours, lisianthus violet & ruscis.</p>
+                    </div>
+                    <div class="flower-price">34 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 4 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 4.jpeg" alt="Romance Romantique" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Romance Romantique</h4>
+                        <p class="flower-desc">L'assemblage parfait entre tendresse et délicatesse pour une charmante attention.</p>
+                        <p class="flower-details">Fleurs : Roses blanches, pivoines pastel & gypsophile.</p>
+                    </div>
+                    <div class="flower-price">42 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 5 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 5.jpeg" alt="Passion Somptueuse" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Passion Somptueuse</h4>
+                        <p class="flower-desc">Un volume majestueux avec un contraste saisissant entre rouge profond et vert tendre.</p>
+                        <p class="flower-details">Fleurs : Grandes roses rouges à tige longue & feuillage noble.</p>
+                    </div>
+                    <div class="flower-price">58 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 6 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 6.jpeg" alt="Raffinement Rosé" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Raffinement Rosé</h4>
+                        <p class="flower-desc">Une composition très douce jouant sur les dégradés de rose et la fraîcheur du feuillage.</p>
+                        <p class="flower-details">Fleurs : Roses branchues, œillets poétiques & pistache.</p>
+                    </div>
+                    <div class="flower-price">49 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 7 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 7.jpeg" alt="Création Harmonie" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Création Harmonie</h4>
+                        <p class="flower-desc">Mélange équilibré et chaleureux idéal pour célébrer un anniversaire ou remercier un proche.</p>
+                        <p class="flower-details">Fleurs : Gerberas, roses pêche & feuillage exotique.</p>
+                    </div>
+                    <div class="flower-price">67 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 8 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 8.jpeg" alt="Jardin Secret" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Jardin Secret</h4>
+                        <p class="flower-desc">Une création naturelle pleine de fraîcheur qui rappelle la beauté des jardins bucoliques.</p>
+                        <p class="flower-details">Fleurs : Fleurs fraîches de saison & eucalyptus cinerea.</p>
+                    </div>
+                    <div class="flower-price">75 €</div>
+                </div>
+            </div>
+
+            <!-- Fleur 9 -->
+            <div class="gallery-card">
+                <img src="images/Bouquet 9.jpeg" alt="Prestige Absolu" class="gallery-item">
+                <div class="flower-info">
+                    <div>
+                        <h4 class="flower-title">Prestige Absolu</h4>
+                        <p class="flower-desc">Notre création haut de gamme la plus spectaculaire pour vos très grandes occasions.</p>
+                        <p class="flower-details">Fleurs : Orchidées premium, roses d'exception & feuillage rare.</p>
+                    </div>
+                    <div class="flower-price">85 €</div>
+                </div>
+            </div>
+
         </div>
     </main>
 
