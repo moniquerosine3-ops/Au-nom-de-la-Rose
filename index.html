@@ -5,7 +5,390 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Au Nom de la Rose | Fleuriste & Créations Florales Artisanales</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --primary-color: #8b7355; 
+            --primary-light: #f4efe6;
+            --secondary-color: #2c2a29; 
+            --text-dark: #4a4543; 
+            --border-color: #e2ded8;
+            --rose-accent: #c45d44;
+        }
+
+        body { 
+            font-family: 'Jost', sans-serif; 
+            background-color: #faf8f5; 
+            color: var(--text-dark); 
+            margin: 0; 
+            line-height: 1.6; 
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        .top-bar { 
+            background-color: var(--secondary-color); 
+            color: #f4efea; 
+            text-align: center; 
+            padding: 10px; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header { 
+            background: white; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 0; 
+        }
+
+        .logo h1 { 
+            margin: 0; 
+            font-size: 1.7rem; 
+            color: var(--secondary-color); 
+            font-family: 'Playfair Display', Georgia, serif; 
+            letter-spacing: 1px;
+        }
+
+        nav ul { 
+            display: flex; 
+            gap: 20px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+            flex-wrap: wrap;
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Section Hero / Accueil */
+        .hero-section {
+            padding: 60px 0;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+        }
+
+        /* Grille des Bouquets (Alignement côte à côte forcé) */
+        .prestations-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #f0ebd8;
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .card-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--rose-accent);
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .btn-card {
+            display: block;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-card:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Section Formulaire de Commande */
+        .order-form-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0 60px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .order-form-section h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.9rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .payment-banner {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 25px 0;
+            font-size: 0.95rem;
+        }
+
+        .payment-banner strong {
+            color: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #faf8f5;
+            box-sizing: border-box;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Section Contact & Magasin */
+        .contact-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.9rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .shop-address-box {
+            font-size: 1.05rem;
+            color: var(--secondary-color);
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .hours-box {
+            background: var(--primary-light);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 6px;
+            margin: 15px 0 30px 0;
+            border-left: 3px solid var(--primary-color);
+            text-align: left;
+        }
+
+        .hours-box h4 {
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+        }
+
+        .hours-box p {
+            margin: 4px 0;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-contact:hover { opacity: 0.9; }
+        .btn-tel { background-color: var(--secondary-color); }
+        .btn-wa { background-color: #2d6a4f; }
+        .btn-mail { background-color: var(--primary-color); }
+
+        footer { 
+            background: var(--secondary-color); 
+            color: #999; 
+            padding: 40px 0; 
+            text-align: center; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.5px;
+        }
+
+        footer h4 {
+            color: white;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
 
@@ -47,7 +430,7 @@
             <div class="cards-grid">
                 <!-- Bouquet Tendresse -->
                 <div class="card">
-                    <img src="images/bouquet-tendresse-1.jpeg" alt="Bouquet Tendresse">
+                    <img src="images/bouquet-tendresse-1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80'" alt="Bouquet Tendresse">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Tendresse</h3>
@@ -60,7 +443,7 @@
 
                 <!-- Bouquet Passion -->
                 <div class="card">
-                    <img src="images/abonnement.jpeg" alt="Bouquet Passion">
+                    <img src="images/abonnement.jpeg" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80'" alt="Bouquet Passion">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Passion</h3>
@@ -73,7 +456,7 @@
 
                 <!-- Bouquet Éclat -->
                 <div class="card">
-                    <img src="images/livraison.jpeg" alt="Bouquet Éclat">
+                    <img src="images/livraison.jpeg" onerror="this.src='https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80'" alt="Bouquet Éclat">
                     <div class="card-content">
                         <div>
                             <h3>Bouquet Éclat</h3>
@@ -187,6 +570,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
